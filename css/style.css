@@ -1,3 +1,11 @@
+:root{
+  --basic-black: #000000;
+  --basic-white: #FFFFFF;
+  --basic-red: #EE3643;
+  --header-background-color: rgba(0, 0, 0, 0.0001);
+  --services-container-background-color: rgba(241, 245, 247, 1);
+  --top-bottom-color: rgba(41,52,73,1);
+}
 @font-face {
   font-family: "Cuprum";
   font-style: normal;
@@ -44,4 +52,38 @@
   font-weight: bold;
   src: url("../fonts/ptsansbold.woff2") format("woff2"),
   url("../fonts/ptsansbold.woff") format("woff");
+}
+
+.main-header h1,
+.main-header h2,
+.main-footer h3
+{
+  display: none;
+}
+
+.main-header{
+  background-color: var(--header-background-color);
+}
+
+.main-header-top{
+  background-color: var(--top-bottom-color);
+}
+.about-shop{
+  font: normal italic 16px "Cuprum", sans-serif;
+  color: var(--basic-red);
+}
+
+.services-container{
+  background-color: var(--services-container-background-color);
+}
+
+.common-text{
+  font:  normal 13px "PT Sans", serif;
+  color: var(--basic-black);
+}
+
+.main-footer-relation{
+  font: normal normal 16px Cuprum, sans-serif;
+  color: var(--basic-white);
+  background-color: var(--top-bottom-color);
 }
