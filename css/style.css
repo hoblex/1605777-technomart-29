@@ -7,6 +7,8 @@
   --additional-background:#F1F5F7;
   --top-bottom-color: #293449;
 }
+
+/*Описание шрифтов*/
 @font-face {
   font-family: "Cuprum";
   font-style: normal;
@@ -55,6 +57,9 @@
   url("../fonts/ptsansbold.woff") format("woff");
 }
 
+
+/*Общий стиль для тегов всего окна*/
+/**********************************/
 body {
   min-width: 1120px;
   margin: 0;
@@ -72,13 +77,20 @@ a {
   text-decoration: none;
 }
 
+
 .hidden-heading {
   display: none;
 }
 
+/*Начало раздела стилизации Header*/
+/**********************************/
 .main-header {
   font-family: "Cuprum", sans-serif;
   background-color: var(--additional-background);
+}
+
+.main-header-logo{
+  background-color: var(--basic-red);
 }
 
 .about-shop {
@@ -87,11 +99,11 @@ a {
   font-size: 16px;
   color: var(--basic-red);
 }
-
 .tel-header {
   font-size: 21px;
   color: var(--basic-red);
 }
+
 .main-header-top {
   color: var(--basic-white);
   background-color: var(--top-bottom-color);
@@ -137,10 +149,22 @@ a {
   font-size: 18px;
 }
 
-
 .address-header{
   color: var(--basic-gray);
 }
+/*********************************/
+/*Конец раздела стилизации Header*/
+
+/*Начало раздела стилизации основоного контейнера окна*/
+/******************************************************/
+
+.content-container-list {
+  list-style: none;
+}
+
+/******************************************************/
+/*Конец раздела стилизации основоного контейнера окна*/
+
 
 .services-container{
   background-color: var(--additional-background);
@@ -155,8 +179,4 @@ a {
   font: normal normal 16px Cuprum, sans-serif;
   color: var(--basic-white);
   background-color: var(--top-bottom-color);
-}
-
-.main-header-logo{
-  background-color: var(--basic-red);
 }
