@@ -54,8 +54,7 @@
   url("../fonts/ptsansbold.woff") format("woff");
 }
 
-.main-header h1,
-.main-header h2,
+.hidden-heading,
 .main-footer h3
 {
   display: none;
