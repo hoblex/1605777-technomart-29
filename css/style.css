@@ -2,9 +2,10 @@
   --basic-black: #000000;
   --basic-white: #FFFFFF;
   --basic-red: #EE3643;
-  --header-background-color: rgba(0, 0, 0, 0.0001);
-  --services-container-background-color: rgba(241, 245, 247, 1);
-  --top-bottom-color: rgba(41,52,73,1);
+  --basic-gray: #32425C;
+  --basic-graylight: #C5C5C5;
+  --additional-background:#F1F5F7;
+  --top-bottom-color: #293449;
 }
 @font-face {
   font-family: "Cuprum";
@@ -54,26 +55,95 @@
   url("../fonts/ptsansbold.woff") format("woff");
 }
 
-.hidden-heading,
-.main-footer h3
-{
+body {
+  min-width: 1120px;
+  margin: 0;
+  padding: 0;
+  color: var(--basic-white);
+  background-color: var(--basic-white);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+.hidden-heading {
   display: none;
 }
 
-.main-header{
-  background-color: var(--header-background-color);
+.main-header {
+  font-family: "Cuprum", sans-serif;
+  background-color: var(--additional-background);
 }
 
-.main-header-top{
-  background-color: var(--top-bottom-color);
-}
-.about-shop{
-  font: normal italic 16px "Cuprum", sans-serif;
+.about-shop {
+  font-weight: normal;
+  font-style: italic;
+  font-size: 16px;
   color: var(--basic-red);
 }
 
+.tel-header {
+  font-size: 21px;
+  color: var(--basic-red);
+}
+.main-header-top {
+  color: var(--basic-white);
+  background-color: var(--top-bottom-color);
+}
+
+.bookmarks-link,
+.busket-link,
+.place-an-order-link,
+.main-header-searching {
+  color: var(--basic-white);
+  font-size: 18px;
+}
+
+.main-nav {
+  background-color: var(--basic-gray);
+
+}
+
+.login-link,
+.registration-link{
+  color: var(--basic-black);
+  font-size: 21px;
+}
+
+.login-link:hover,
+.login-link:focus,
+.registration-link:hover,
+.registration-link:focus {
+  color: var(--basic-red);
+}
+
+.login-link:active,
+.registration-link:active {
+  color: var(--basic-graylight);
+}
+
+.site-navigation-list {
+  list-style: none;
+}
+
+.site-navigation-item a {
+  color: var(--basic-white);
+  font-size: 18px;
+}
+
+
+.address-header{
+  color: var(--basic-gray);
+}
+
 .services-container{
-  background-color: var(--services-container-background-color);
+  background-color: var(--additional-background);
 }
 
 .common-text{
@@ -85,4 +155,8 @@
   font: normal normal 16px Cuprum, sans-serif;
   color: var(--basic-white);
   background-color: var(--top-bottom-color);
+}
+
+.main-header-logo{
+  background-color: var(--basic-red);
 }
