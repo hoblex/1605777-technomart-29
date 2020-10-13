@@ -1,11 +1,23 @@
 :root{
   --basic-black: #000000;
   --basic-white: #FFFFFF;
+  --transparent-white-50: rgba(255, 255, 255, 0.5);
+  --transparent-white-30: rgba(255, 255, 255, 0.3);
   --basic-red: #EE3643;
+  --additional-red-hover: #CA2C37;
+  --additional-red-active: #BA2732;
   --basic-gray: #32425C;
   --basic-graylight: #C5C5C5;
+  --basic-graylight-30: rgba(197,197,197,0.3);
+  --additional-graylight-30: rgba(169,169,169,0.3);
   --additional-background:#F1F5F7;
   --top-bottom-color: #293449;
+  --material-background-color: #FFBF47;
+  --tools-background-color: #3BBCE3;
+  --technics-background-color: #DC91D8;
+  --discounts-background-color: #8ED78F;
+  --delivery-background-color: #FFC047;
+  --common-header-background: #F9F5F0;
 }
 
 /*Описание шрифтов*/
@@ -99,6 +111,7 @@ a {
   font-size: 16px;
   color: var(--basic-red);
 }
+
 .tel-header {
   font-size: 21px;
   color: var(--basic-red);
@@ -141,6 +154,8 @@ a {
 }
 
 .site-navigation-list {
+  padding: 0;
+  margin: 0;
   list-style: none;
 }
 
@@ -149,7 +164,12 @@ a {
   font-size: 18px;
 }
 
-.address-header{
+.site-navigation-item a:active {
+  color: var(--basic-white);
+  opacity: 50%;
+}
+
+.address-header {
   color: var(--basic-gray);
 }
 /*********************************/
@@ -159,23 +179,96 @@ a {
 /******************************************************/
 
 .content-container-list {
+  padding: 0;
+  margin: 0;
   list-style: none;
+  font-family: Cuprum, sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.label-new {
+  background-color: var(--basic-red);
+  font-size: 14px;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+.content-container-item a{
+  font-size: 14px;
+  font-weight: normal;
+  color: var(--basic-white);
+  background-color: var(--transparent-white-30);
+}
+
+.content-card {
+  text-transform: uppercase;
+}
+.content-container-item a:hover {
+  background-color: var(--basic-graylight-30);
+}
+
+.content-container-item a:active {
+  background-color: var(--additional-graylight-30);
+}
+
+.content-container-item:nth-child(1) {
+  background-color: var(--material-background-color);
+}
+
+.content-container-item:nth-child(2) {
+  background-color: var(--tools-background-color);
+}
+
+.content-container-item:nth-child(3) {
+  background-color: var(--technics-background-color);
+}
+
+.content-container-item:nth-child(4) {
+  background-color: var(--discounts-background-color);
+}
+
+.content-container-item:nth-child(5) {
+  background-color: var(--delivery-background-color);
+}
+
+.slider-header h2{
+  font: bold normal 36px Cuprum, sans-serif;
+  text-transform: uppercase;
+}
+
+.slider-header p{
+  font: normal normal 18px Cuprum, sans-serif;
+}
+
+.common-header {
+  font: normal normal 30px Cuprum, sans-serif;
+  color: var(--basic-gray);
+  background-color: var(--common-header-background);
+  text-transform: uppercase;
+}
+
+.regular-button {
+  font: normal normal 14px Cuprum, sans-serif;
+  color: var(--basic-white);
+  background-color: var(--basic-red);
+  text-transform: uppercase;
 }
 
 /******************************************************/
 /*Конец раздела стилизации основоного контейнера окна*/
 
 
-.services-container{
+.services-container {
   background-color: var(--additional-background);
 }
 
-.common-text{
+.common-text {
   font:  normal 13px "PT Sans", serif;
   color: var(--basic-black);
 }
 
-.main-footer-relation{
+.main-footer-relation {
   font: normal normal 16px Cuprum, sans-serif;
   color: var(--basic-white);
   background-color: var(--top-bottom-color);
