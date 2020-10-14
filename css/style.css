@@ -10,7 +10,7 @@
   --basic-graylight: #C5C5C5;
   --basic-graylight-30: rgba(197,197,197,0.3);
   --additional-graylight-30: rgba(169,169,169,0.3);
-  --additional-background:#F1F5F7;
+  --additional-graylight:#F1F5F7;
   --top-bottom-color: #293449;
   --material-background-color: #FFBF47;
   --tools-background-color: #3BBCE3;
@@ -18,6 +18,8 @@
   --discounts-background-color: #8ED78F;
   --delivery-background-color: #FFC047;
   --common-header-background: #F9F5F0;
+  --additional-nav-color: #FFD180;
+  --social-link-background: #212A3A;
 }
 
 /*Описание шрифтов*/
@@ -94,11 +96,17 @@ a {
   display: none;
 }
 
+.common-text {
+  font:  normal 13px "PT Sans", serif;
+  color: var(--basic-black);
+  line-height: 24px;
+}
+
 /*Начало раздела стилизации Header*/
 /**********************************/
 .main-header {
   font-family: "Cuprum", sans-serif;
-  background-color: var(--additional-background);
+  background-color: var(--additional-graylight);
 }
 
 .main-header-logo{
@@ -194,7 +202,7 @@ a {
   text-transform: uppercase;
 }
 
-.content-container-item a{
+.content-container-item a {
   font-size: 14px;
   font-weight: normal;
   color: var(--basic-white);
@@ -241,6 +249,12 @@ a {
   font: normal normal 18px Cuprum, sans-serif;
 }
 
+.product-item-title-name {
+  color: var(--basic-black);
+  font: bold normal 18px PT Sans, sans-serif;
+  line-height: 20px;
+}
+
 .common-header {
   font: normal normal 30px Cuprum, sans-serif;
   color: var(--basic-gray);
@@ -255,21 +269,139 @@ a {
   text-transform: uppercase;
 }
 
+.product-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.price-view {
+  font-family: "PT Sans", serif;
+  font-size: 17px;
+}
+
+.services-container {
+  background-color: var(--additional-graylight);
+}
+
+.services-header,
+.common-information-header,
+.common-information-contacts {
+  font: normal normal 30px Cuprum, sans-serif;
+  color: var(--basic-black);
+  text-transform: uppercase;
+}
+
+.services-option-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.delivery-description-text {
+  color: var(--basic-gray);
+  font: normal normal 30px Cuprum, sans-serif;
+  text-transform: uppercase;
+}
+
+.delivery-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font: normal normal 18px Cuprum, sans-serif;
+  color: var(--basic-black);
+}
+
+.delivery-item span {
+  color: var(--basic-red);
+  font-weight: bold;
+  margin-right: 5px;
+}
+
 /******************************************************/
 /*Конец раздела стилизации основоного контейнера окна*/
 
 
-.services-container {
-  background-color: var(--additional-background);
+.main-footer {
+  background-color: var(--basic-gray);
 }
 
-.common-text {
-  font:  normal 13px "PT Sans", serif;
-  color: var(--basic-black);
+.main-footer-nav {
+  font: normal normal 18px Cuprum, sans-serif;
+}
+
+.tel-footer {
+  color: var(--basic-white);
+}
+
+.footer-nav-line1,
+.footer-nav-line2 {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.footer-nav-line1-item a {
+  color: var(--additional-graylight);
+}
+
+.footer-nav-line2-item a {
+  color: var(--additional-nav-color);
+}
+
+.footer-nav-line1-item a:hover,
+.footer-nav-line2-item a:hover {
+  text-decoration: underline;
+}
+
+.footer-nav-line1-item a:active,
+.footer-nav-line2-item a:active {
+  opacity: 50%;
+  text-decoration: none;
+}
+
+.contact-information {
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .main-footer-relation {
   font: normal normal 16px Cuprum, sans-serif;
   color: var(--basic-white);
   background-color: var(--top-bottom-color);
+}
+
+.footer-copiright-text {
+  font-size: 16px;
+  line-height: 18px;
+}
+
+.social-link-container {
+  background-color: var(--social-link-background);
+  text-align: center;
+  vertical-align: bottom;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+}
+
+a:hover .social-link-container{
+  background-color: var(--basic-red);
+}
+
+.main-footer-feedback a,
+.main-footer-developer-link a {
+  color: var(--additional-nav-color);
+}
+
+
+.main-footer-feedback a:hover,
+.main-footer-developer-link a:hover {
+  text-decoration: underline;
+}
+
+.main-footer-feedback a:active,
+.main-footer-developer-link a:active {
+  color: var(--basic-red);
+  text-decoration: none;
 }
