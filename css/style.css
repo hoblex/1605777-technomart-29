@@ -1,6 +1,7 @@
 :root{
   --basic-black: #000000;
   --basic-white: #FFFFFF;
+  --basic-green: #63A63E;
   --transparent-white-50: rgba(255, 255, 255, 0.5);
   --transparent-white-30: rgba(255, 255, 255, 0.3);
   --basic-red: #EE3643;
@@ -21,6 +22,10 @@
   --additional-nav-color: #FFD180;
   --social-link-background: #212A3A;
   --contact-information-color: #F3F7F9;
+  --to-buy-button-background-light: #5FBB2D;
+  --to-buy-button-background-dark: #518534;
+  --to-buy-button-background-shadow: #367315;
+
 }
 
 /*Описание шрифтов*/
@@ -265,7 +270,7 @@ a {
 
 .content-container-item-discounts {
   background-color: var(--discounts-background-color);
-  background-image: url("../img/shopping_bucket.svg");
+  background-image: url("../img/shopping_cart.svg");
   background-repeat: no-repeat;
   background-position: 5%;
 }
@@ -275,6 +280,51 @@ a {
   background-image: url("../img/truck.svg");
   background-repeat: no-repeat;
   background-position: 5%;
+}
+
+.link-product-to-buy {
+  display: inline-block;
+  width: 135px;
+  height: 38px;
+  border-radius: 2px;
+  box-shadow: inset 0 -3px 0 var(--to-buy-button-background-shadow);
+  line-height: 18px;
+  text-align: center;
+  color: var(--basic-white);
+  background-color: var(--basic-green);
+  background-image: url("../img/small_shopping_cart.svg");
+  background-repeat: no-repeat;
+  text-transform: uppercase;
+}
+
+.link-product-to-buy:hover {
+  background-color: var(--to-buy-button-background-light);
+}
+
+.link-product-to-buy:active {
+  background-color: var(--to-buy-button-background-dark);
+}
+
+.link-product-to-bookmarks {
+  display: inline-block;
+  width: 135px;
+  height: 38px;
+  border-radius: 2px;
+  box-shadow: inset 0 -3px 0 var(--basic-green);
+  line-height: 18px;
+  color: var(--basic-gray);
+  text-align: center;
+  background-color: var(--basic-white);
+  text-transform: uppercase;
+}
+
+.link-product-to-bookmarks:hover {
+  box-shadow: inset 0 -3px 0 var(--basic-gray);
+}
+
+.link-product-to-bookmarks:active {
+  color: var(--basic-graylight);
+  box-shadow: inset 0 -3px 0 var(--basic-graylight);;
 }
 
 .slider-header h2{
@@ -336,6 +386,7 @@ a {
 
 .price-view {
   font-family: "PT Sans", "Arial", sans-serif;
+  font-weight: bold;
   font-size: 17px;
 }
 
@@ -343,13 +394,31 @@ a {
   background-color: var(--additional-graylight);
 }
 
-
 .services-option-list {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
+.button-services-option {
+  width: 240px;
+  height: 61px;
+  font-size: 21px;
+  font-weight: bold;
+  line-height: 30px;
+  text-align: center;
+  color: var(--basic-white);
+  background-color: var(--basic-gray);
+}
+
+.button-services-option:hover {
+  background-color: var(--top-bottom-color);
+}
+
+.services-description {
+  background-image: url("../img/delivery-truck.svg");
+  background-repeat: no-repeat;
+}
 
 .delivery-list {
   list-style: none;
@@ -433,7 +502,32 @@ a {
   border-radius: 50%;
 }
 
-a:hover .social-link-container{
+.vk-link,
+.fb-link,
+.inst-link {
+  display: inline-block;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--social-link-background);
+  text-align: center;
+}
+
+.vk-link {
+  background: url("../img/vk-logo.svg") center center no-repeat;
+}
+
+.fb-link {
+  background: url("../img/fb-logo.svg") center center no-repeat;
+}
+
+.inst-link {
+  background: url("../img/insta-logo.svg") center center no-repeat;
+}
+
+.vk-link:hover,
+.fb-link:hover,
+.inst-link:hover {
   background-color: var(--basic-red);
 }
 
