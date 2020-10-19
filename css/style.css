@@ -20,6 +20,7 @@
   --common-header-background: #F9F5F0;
   --additional-nav-color: #FFD180;
   --social-link-background: #212A3A;
+  --contact-information-color: #F3F7F9;
 }
 
 /*Описание шрифтов*/
@@ -66,14 +67,16 @@
 
 /*Общий стиль для тегов всего окна*/
 /**********************************/
+
 body {
-  min-width: 1120px;
+  min-width: 1000px;
   margin: 0;
   padding: 0;
-  color: var(--basic-white);
   background-color: var(--basic-white);
+  color: var(--basic-black);
+  font: normal normal 14px "Cuprum", "Arial", sans-serif;
+  line-height: 24px;
 }
-
 img {
   max-width: 100%;
   height: auto;
@@ -81,11 +84,6 @@ img {
 
 a {
   text-decoration: none;
-}
-
-
-.hidden-heading {
-  display: none;
 }
 
 .visually-hidden {
@@ -102,15 +100,12 @@ a {
 }
 
 .common-text {
-  font:  normal 13px "PT Sans", serif;
-  color: var(--basic-black);
-  line-height: 24px;
+  font:  normal 13px "PT Sans", "Arial", sans-serif;
 }
 
 /*Начало раздела стилизации Header*/
 /**********************************/
 .main-header {
-  font-family: "Cuprum", sans-serif;
   background-color: var(--additional-graylight);
 }
 
@@ -122,10 +117,12 @@ a {
   font-weight: normal;
   font-style: italic;
   font-size: 16px;
+  line-height: 23px;
   color: var(--basic-red);
 }
 
 .tel-header {
+  line-height: 30px;
   font-size: 21px;
   color: var(--basic-red);
 }
@@ -152,6 +149,7 @@ a {
 .registration-link{
   color: var(--basic-black);
   font-size: 21px;
+  line-height: 21px;
 }
 
 .login-link:hover,
@@ -195,28 +193,35 @@ a {
   padding: 0;
   margin: 0;
   list-style: none;
-  font-family: Cuprum, sans-serif;
+  }
+
+.content-container-item-name {
   font-size: 24px;
   font-weight: bold;
+  line-height: 30px;
 }
 
 .label-new {
+  color: var(--basic-white);
   background-color: var(--basic-red);
-  font-size: 14px;
-  font-weight: normal;
   text-transform: uppercase;
+  line-height: 18px;
 }
 
 .content-container-item a {
-  font-size: 14px;
-  font-weight: normal;
   color: var(--basic-white);
   background-color: var(--transparent-white-30);
 }
 
 .content-card {
+  line-height: 18px;
   text-transform: uppercase;
 }
+
+.content-container {
+  color: var(--basic-white);
+}
+
 .content-container-item a:hover {
   background-color: var(--basic-graylight-30);
 }
@@ -246,29 +251,51 @@ a {
 }
 
 .slider-header h2{
-  font: bold normal 36px Cuprum, sans-serif;
+  font-weight: bold;
+  font-size:  36px;
   text-transform: uppercase;
 }
 
 .slider-header p{
-  font: normal normal 18px Cuprum, sans-serif;
+  font-size: 18px;
 }
 
 .product-item-title-name {
   color: var(--basic-black);
-  font: bold normal 18px PT Sans, sans-serif;
+  font: bold normal 18px "PT Sans", "Arial", sans-serif;
   line-height: 20px;
 }
 
 .common-header {
-  font: normal normal 30px Cuprum, sans-serif;
-  color: var(--basic-gray);
   background-color: var(--common-header-background);
+}
+
+.popular-product-header,
+.popular-manufacturar-header,
+.services-header,
+.common-information-header,
+.common-information-contacts,
+.delivery-description-header {
+  font-size: 30px;
+  line-height: 30px;
+  font-weight: normal;
   text-transform: uppercase;
 }
 
+.popular-product-header,
+.popular-manufacturar-header,
+.delivery-description-header {
+  color: var(--basic-gray);
+}
+
+.services-header,
+.common-information-header,
+.common-information-contacts-header {
+  color: var(--basic-black);
+}
+
 .regular-button {
-  font: normal normal 14px Cuprum, sans-serif;
+  line-height: 18px;
   color: var(--basic-white);
   background-color: var(--basic-red);
   text-transform: uppercase;
@@ -281,7 +308,7 @@ a {
 }
 
 .price-view {
-  font-family: "PT Sans", serif;
+  font-family: "PT Sans", "Arial", sans-serif;
   font-size: 17px;
 }
 
@@ -289,13 +316,6 @@ a {
   background-color: var(--additional-graylight);
 }
 
-.services-header,
-.common-information-header,
-.common-information-contacts {
-  font: normal normal 30px Cuprum, sans-serif;
-  color: var(--basic-black);
-  text-transform: uppercase;
-}
 
 .services-option-list {
   list-style: none;
@@ -303,17 +323,12 @@ a {
   margin: 0;
 }
 
-.delivery-description-text {
-  color: var(--basic-gray);
-  font: normal normal 30px Cuprum, sans-serif;
-  text-transform: uppercase;
-}
 
 .delivery-list {
   list-style: none;
   padding: 0;
   margin: 0;
-  font: normal normal 18px Cuprum, sans-serif;
+  font-size: 18px;
   color: var(--basic-black);
 }
 
@@ -332,7 +347,7 @@ a {
 }
 
 .main-footer-nav {
-  font: normal normal 18px Cuprum, sans-serif;
+  font-size: 18px;
 }
 
 .tel-footer {
@@ -367,11 +382,12 @@ a {
 
 .contact-information {
   font-size: 18px;
-  line-height: 24px;
+  color: var(--contact-information-color);
 }
 
 .main-footer-relation {
-  font: normal normal 16px Cuprum, sans-serif;
+  font-size: 16px;
+  line-height: 18px;
   color: var(--basic-white);
   background-color: var(--top-bottom-color);
 }
