@@ -138,7 +138,7 @@ a {
 }
 
 .bookmarks-link,
-.busket-link,
+.bucket-link,
 .place-an-order-link,
 .main-header-searching {
   color: var(--basic-white);
@@ -348,7 +348,7 @@ a {
 }
 
 .popular-product-header,
-.popular-manufacturar-header,
+.popular-manufacturer-header,
 .services-header,
 .common-information-header,
 .common-information-contacts,
@@ -360,7 +360,7 @@ a {
 }
 
 .popular-product-header,
-.popular-manufacturar-header,
+.popular-manufacturer-header,
 .delivery-description-header {
   color: var(--basic-gray);
 }
@@ -488,7 +488,7 @@ a {
   background-color: var(--top-bottom-color);
 }
 
-.footer-copiright-text {
+.footer-copyright-text {
   font-size: 16px;
   line-height: 18px;
 }
