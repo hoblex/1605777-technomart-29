@@ -344,7 +344,8 @@ a {
 
 .popular-product-header,
 .popular-manufacturer-header,
-.delivery-description-header {
+.delivery-description-header,
+.credit-description-header {
   color: var(--basic-gray);
 }
 
@@ -398,10 +399,22 @@ a {
   background-color: var(--top-bottom-color);
 }
 
-.services-description {
-  background-image: url("../img/delivery_truck.svg");
+.delivery-description {
+  background-image: url("../img/delivery_truck.png");
   background-repeat: no-repeat;
 }
+
+.guarantee-description {
+  background-image: url("../img/guarantee.png");
+  background-repeat: no-repeat;
+}
+
+
+.credit-description {
+  background-image: url("../img/credit.png");
+  background-repeat: no-repeat;
+}
+
 
 .delivery-list {
   list-style: none;
