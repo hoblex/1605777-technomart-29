@@ -399,7 +399,7 @@ a {
 }
 
 .services-description {
-  background-image: url("../img/delivery-truck.svg");
+  background-image: url("../img/delivery_truck.svg");
   background-repeat: no-repeat;
 }
 
@@ -497,15 +497,15 @@ a {
 }
 
 .vk-link {
-  background: url("../img/vk-logo.svg") center center no-repeat;
+  background: url("../img/vk_logo.svg") center center no-repeat;
 }
 
 .fb-link {
-  background: url("../img/fb-logo.svg") center center no-repeat;
+  background: url("../img/fb_logo.svg") center center no-repeat;
 }
 
 .inst-link {
-  background: url("../img/insta-logo.svg") center center no-repeat;
+  background: url("../img/insta_logo.svg") center center no-repeat;
 }
 
 .vk-link:hover,
