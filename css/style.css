@@ -114,10 +114,6 @@ a {
   background-color: var(--additional-graylight);
 }
 
-.main-header-logo{
-  background-color: var(--basic-red);
-}
-
 .about-shop {
   font-weight: normal;
   font-style: italic;
@@ -237,35 +233,35 @@ a {
 
 .content-container-materials {
   background-color: var(--material-background-color);
-  background-image: url("../img/paint_bucket.svg");
+  background-image: url("../img/icon_paint_bucket.svg");
   background-repeat: no-repeat;
   background-position: 5%;
 }
 
 .content-container-tools {
   background-color: var(--tools-background-color);
-  background-image: url("../img/drill.svg");
+  background-image: url("../img/icon_drill.svg");
   background-repeat: no-repeat;
   background-position: 5%;
 }
 
 .content-container-technics {
   background-color: var(--technics-background-color);
-  background-image: url("../img/tractor.svg");
+  background-image: url("../img/icon_tractor.svg");
   background-repeat: no-repeat;
   background-position: 5%;
 }
 
 .content-container-discounts {
   background-color: var(--discounts-background-color);
-  background-image: url("../img/shopping_cart.svg");
+  background-image: url("../img/icon_shopping_cart.svg");
   background-repeat: no-repeat;
   background-position: 5%;
 }
 
 .content-container-delivery {
   background-color: var(--delivery-background-color);
-  background-image: url("../img/truck.svg");
+  background-image: url("../img/icon_truck.svg");
   background-repeat: no-repeat;
   background-position: 5%;
 }
@@ -280,7 +276,7 @@ a {
   text-align: center;
   color: var(--basic-white);
   background-color: var(--basic-green);
-  background-image: url("../img/small_shopping_cart.svg");
+  background-image: url("../img/icon_cart.svg");
   background-repeat: no-repeat;
   text-transform: uppercase;
 }
@@ -510,15 +506,15 @@ a {
 }
 
 .vk-link {
-  background: url("../img/vk_logo.svg") center center no-repeat;
+  background: url("../img/logo_vk.svg") center center no-repeat;
 }
 
 .fb-link {
-  background: url("../img/fb_logo.svg") center center no-repeat;
+  background: url("../img/logo_fb.svg") center center no-repeat;
 }
 
 .inst-link {
-  background: url("../img/insta_logo.svg") center center no-repeat;
+  background: url("../img/logo_insta.svg") center center no-repeat;
 }
 
 .vk-link:hover,
