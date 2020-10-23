@@ -2,7 +2,7 @@
 <g filter="url(#filter0_i)">
 <rect width="220" height="68" fill="url(#pattern0)"/>
 </g>
-<mask id="mask0" maskUnits="userSpaceOnUse" x="0" y="0" width="220" height="68">
+<mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="220" height="68">
 <rect width="220" height="68" fill="url(#pattern1)"/>
 </mask>
 <g mask="url(#mask0)">
