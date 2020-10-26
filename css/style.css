@@ -91,6 +91,17 @@ a {
   text-decoration: none;
 }
 
+.page {
+  height: 100%;
+}
+
+.page-body {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+  align-content: start;
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -111,7 +122,29 @@ a {
 /*Начало раздела стилизации Header*/
 /**********************************/
 .main-header {
+  margin-bottom: 59px;
   background-color: var(--additional-graylight);
+  display: grid;
+
+  grid-template-rows: min-content 1fr min-content;
+  justify-content: center;
+
+
+  outline: 5px solid rgba(0, 255, 0, 0.7);
+  outline-offset: -5px;
+}
+
+.main-header-top {
+  color: var(--basic-white);
+  background-color: var(--top-bottom-color);
+  width: 100%;
+
+  outline: 5px solid rgba(255, 0, 0, 0.3);
+  outline-offset: -5px;
+}
+
+.main-header-nav {
+  margin-bottom: 60px;
 }
 
 .about-shop {
@@ -127,12 +160,6 @@ a {
   font-size: 21px;
   color: var(--basic-red);
 }
-
-.main-header-top {
-  color: var(--basic-white);
-  background-color: var(--top-bottom-color);
-}
-
 .bookmarks-link,
 .bucket-link,
 .place-an-order-link,
@@ -144,6 +171,8 @@ a {
 .main-nav {
   background-color: var(--basic-gray);
 
+  outline: 5px solid rgba(255, 0, 0, 0.3);
+  outline-offset: -5px;
 }
 
 .login-link,
@@ -189,12 +218,42 @@ a {
 
 /*Начало раздела стилизации основоного контейнера окна*/
 /******************************************************/
+.container {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+}
 
+.content-container {
+  display: grid;
+  margin-bottom: 59px;
+  min-height: 409px;
+  color: var(--basic-white);
+}
+
+.popular-product-container{
+  margin-bottom: 70px;
+  min-height: 427px;
+}
+
+.popular-manufacturer-container {
+  margin-bottom: 70px;
+  min-height: 419px;
+}
+
+.services-container {
+  margin-bottom: 70px;
+  min-height: 522px;
+  background-color: var(--additional-graylight);
+}
+
+.common-information-container{
+  min-height: 356px;
+}
 .content-container-list {
   padding: 0;
   margin: 0;
   list-style: none;
-  }
+}
 
 .content-container-item-name {
   font-size: 24px;
@@ -212,10 +271,6 @@ a {
 .content-card {
   line-height: 18px;
   text-transform: uppercase;
-}
-
-.content-container {
-  color: var(--basic-white);
 }
 
 .content-container-item a {
@@ -370,10 +425,6 @@ a {
   font-size: 17px;
 }
 
-.services-container {
-  background-color: var(--additional-graylight);
-}
-
 .services-option-list {
   list-style: none;
   padding: 0;
@@ -432,6 +483,10 @@ a {
 
 .main-footer {
   background-color: var(--basic-gray);
+
+
+  outline: 5px solid rgba(255, 0, 0, 0.7);
+  outline-offset: -5px;
 }
 
 .main-footer-nav {
