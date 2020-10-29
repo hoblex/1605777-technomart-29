@@ -117,6 +117,9 @@ a {
 }
 
 .common-text {
+  margin: 0;
+  padding: 0;
+  line-height: 24px;
   font:  normal 13px "PT Sans", "Arial", sans-serif;
 }
 
@@ -276,7 +279,6 @@ a {
 }
 
 .services-container {
-  margin-bottom: 70px;
   min-height: 522px;
   background-color: var(--additional-graylight);
 }
@@ -336,6 +338,16 @@ a {
   grid-template-rows: 89px auto;
   /*grid-template-columns: repeat(4, 220px);*/
   gap: 20px;
+}
+
+.services-container-wrap {
+  display: grid;
+  width: 940px;
+  margin-left: auto;
+  margin-bottom: 70px;
+  margin-right: auto;
+  height: 100%;
+  grid-template-rows: 189px 1fr;
 }
 
 .popular-product-container {
@@ -597,7 +609,17 @@ a {
 .services-header,
 .common-information-header,
 .common-information-contacts-header {
+  margin: 0;
+  padding: 0;
   color: var(--basic-black);
+}
+
+.services-container-header {
+  grid-area: ;
+}
+
+.services-header {
+  line-height: 100px;
 }
 
 .popular-product-header,
@@ -691,6 +713,11 @@ a {
 }
 
 
+.services-description {
+  display: grid;
+  grid-template-columns: 240px auto;
+}
+
 .services-option-list {
   list-style: none;
   padding: 0;
@@ -714,8 +741,11 @@ a {
 
 
 .delivery-description {
+  margin-left: 80px;
+  /*background-size: auto auto;*/
   background-image: url("../img/delivery_truck.png");
   background-repeat: no-repeat;
+  background-position: right;
 }
 
 
