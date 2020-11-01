@@ -144,7 +144,7 @@ a {
   color: var(--basic-white);
   background-color: var(--top-bottom-color);
   height: 42px;
-
+  margin-bottom: 41px;
 }
 
 .main-header-top-container {
@@ -164,13 +164,7 @@ a {
 }
 
 .main-header-base-wrap {
-  display: grid;
-  margin-left: auto;
-  margin-right: auto;
-  align-items: center;
-  justify-items: center;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 69px;
+  display: flex;
 }
 
 .main-header-nav {
@@ -178,6 +172,8 @@ a {
 }
 
 .about-shop {
+  margin-top: -5px;
+  margin-left: 30px;
   font-weight: normal;
   font-style: italic;
   font-size: 16px;
@@ -185,10 +181,33 @@ a {
   color: var(--basic-red);
 }
 
+.contact-data-header {
+  display: flex;
+  width: 270px;
+  margin-left: 93px;
+  flex-direction: column;
+  align-items: center;
+}
+
 .tel-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 270px;
+  height: 45px;
   line-height: 30px;
   font-size: 21px;
   color: var(--basic-red);
+  outline: 3px solid var(--basic-white);
+}
+
+.tel-header::before {
+  content: "";
+  top: 13px;
+  width: 19px;
+  height: 19px;
+  background-image: url("../img/icon_phone.svg");
+  background-repeat: no-repeat;
 }
 
 .bookmarks-link,
@@ -248,11 +267,28 @@ a {
   background-color: var(--basic-gray);
 }
 
+
 .login-link,
 .registration-link{
-  color: var(--basic-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 45px;
+  background-color: var(--basic-white);
   font-size: 21px;
   line-height: 21px;
+  color: var(--basic-black);
+}
+
+.login-link {
+  width: 121px;
+  margin-left: 69px;
+}
+
+.registration-link {
+  width: 150px;
+  margin-left: 10px;
+  margin-right: 0;
 }
 
 .login-link:hover,
@@ -267,15 +303,27 @@ a {
   color: var(--basic-graylight);
 }
 
+.login-link::before {
+  content: "";
+  margin-right: 6px;
+  width: 20px;
+  height: 17px;
+  background-image: url("../img/icon_login.svg");
+  background-repeat: no-repeat;
+}
+
+.login-link:hover::before {
+   /*var(--basic-gray);*/
+}
+
 .site-navigation-list {
-  padding: 0;
-  margin: 0;
+  display: flex;
+  height: 60px;
+  justify-content: space-around;
   list-style: none;
-  display: grid;
-  height:60px;
-  grid-template-columns: repeat(7, 1fr);
+  margin: 0;
+  padding: 0;
   align-items: center;
-  justify-items: center;
 }
 
 .site-navigation-item a {
@@ -287,6 +335,7 @@ a {
   opacity: 50%;
 }
 .address-header {
+  margin-top: 3px;
   color: var(--basic-gray);
 }
 
@@ -361,11 +410,7 @@ a {
 
 .popular-product-container,
 .popular-manufacturer-container {
-  display: grid;
-  margin-bottom: 70px;
-  grid-template-rows: 89px auto;
-  /*grid-template-columns: repeat(4, 220px);*/
-  gap: 20px;
+
 }
 
 .services-container-wrap {
@@ -376,7 +421,7 @@ a {
 }
 
 .popular-product-container {
-  height: 427px;
+
 }
 
 .content-card {
@@ -604,13 +649,19 @@ a {
 .manufacturer-item:hover {
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
-.common-header-wrap {
-  height: 89px;
-  line-height: 89px;
-  position: relative;
-  grid-area: 1 / 1 / 2 / -1;
-  background-color: var(--common-header-background);
 
+.common-header-wrap {
+  display: flex;
+  flex-direction: row;
+  height: 89px;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-right: 20px;
+  background-color: var(--common-header-background);
+}
+
+.common-header-wrap  h2 {
+  flex-grow: 1;
 }
 
 .common-header {
@@ -633,27 +684,17 @@ a {
 .services-header,
 .common-information-header,
 .common-information-contacts-header {
-  margin: 0;
-  padding: 0;
   color: var(--basic-black);
-}
-
-.services-header {
-  line-height: 100px;
 }
 
 .popular-product-header,
 .popular-manufacturer-header {
-  left: 28px;
-  top: 29px;
+  margin-left: 28px;
 }
 
 .button-all-popular-product,
 .button-all-manufacturer {
-  position: absolute;
-  right: 19px;
-  top: 25px;
-  vertical-align: center;
+  margin-right: 19px;
  }
 
 .regular-button {
@@ -682,11 +723,13 @@ a {
   display: grid;
   width: 220px;
   height: 318px;
+  margin-bottom: 70px;
   border: 1px solid var(--product-container-border-color);
   grid-template: 179px 1fr 38px / 1fr;
 }
 
 .product-item:hover {
+  position: relative;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
@@ -696,14 +739,20 @@ a {
 
 .product-card-image {
   display: inline-block;
+  position: relative;
+  z-index: 1;
   margin: auto;
 }
 
 .link-product-show {
-
+  position: relative;
+  top: -280px;
+  left: 40px;
+  z-index: -1;
 }
 
 .product-item:hover .link-product-show {
+  z-index: 1;
 }
 
 
@@ -928,7 +977,7 @@ a {
   grid-template-columns: repeat(3, 1fr);
 }
 
-.main-footer-copiright {
+.main-footer-copyright {
   margin: 35px 0;
 }
 
