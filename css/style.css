@@ -158,6 +158,10 @@ a {
   line-height: 55px;
 }
 
+.main-header-logo:active {
+  background-color: var(--additional-red-active);
+}
+
 .main-header-base-wrap {
   display: flex;
 }
