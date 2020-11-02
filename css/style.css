@@ -649,6 +649,10 @@ a {
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
+.manufacturer-item:active {
+  opacity: 0.15;
+}
+
 .common-header-wrap {
   display: flex;
   flex-direction: row;
@@ -704,6 +708,14 @@ a {
   background-color: var(--basic-red);
   text-transform: uppercase;
   margin: 0;
+}
+
+.regular-button:hover {
+  background-color: var(--additional-red-hover);
+}
+
+.regular-button:active {
+  background-color: var(--additional-red-active)
 }
 
 .product-container-list {
