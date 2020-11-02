@@ -200,6 +200,7 @@ a {
   content: "";
   width: 19px;
   height: 19px;
+  margin-right: 16px;
   background-image: url("../img/icon_phone.svg");
   background-repeat: no-repeat;
 }
