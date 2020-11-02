@@ -576,6 +576,11 @@ a {
   height: 17px;
   background-image: url("../img/icon_cart.svg");
   background-repeat: no-repeat;
+  opacity: 0.3;
+}
+
+.link-product-to-buy:hover {
+  background-color: var(--to-buy-button-background-light);
 }
 
 .link-product-to-buy:active {
@@ -802,10 +807,6 @@ a {
   background-image:
             linear-gradient(225deg, white 13px, transparent 13px),
             linear-gradient(315deg, white 13px, transparent 13px);
-}
-
-.link-product-to-buy:hover {
-  background-color: var(--to-buy-button-background-light);
 }
 
 .services-container-wrap {
