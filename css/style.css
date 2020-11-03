@@ -164,6 +164,7 @@ a {
 
 .main-header-base-wrap {
   display: flex;
+  margin-bottom: 45px;
 }
 
 .main-header-nav {
