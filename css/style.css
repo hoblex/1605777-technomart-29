@@ -28,6 +28,7 @@
   --product-container-border-color: #EAEAEA;
   --old-price-color: #A9A9A9;
   --active-bookmark-color: #161D29;
+  --button-inner-shadow: #405069;
 }
 
 /*Описание шрифтов*/
@@ -76,7 +77,7 @@
 /**********************************/
 
 body {
-  min-width: 1000px;
+  min-width: 1280px;
   margin: 0;
   padding: 0;
   background-color: var(--basic-white);
@@ -146,7 +147,7 @@ a {
 .main-header-top-container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  /*justify-content: space-between;*/
 }
 
 .main-header-logo {
@@ -218,21 +219,28 @@ a {
   font-size: 18px;
 }
 
+.bookmarks-link,
+.bucket-link,
 .place-an-order-link {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 42px;
   width: 150px;
+  height: 42px;
   margin: 0;
+  align-items: center;
   align-self: flex-start;
+  justify-content: center;
+}
+
+.place-an-order-link {
   background-color: var(--basic-green);
 }
 
-.bookmarks-link,
-.bucket-link {
-  display: flex;
-  align-items: center;
+.place-an-order-link:hover {
+  background-color: var(--to-buy-button-background-light);
+}
+
+.place-an-order-link:active {
+  color: var(--transparent-white-50);
 }
 
  .bookmarks-link::before,
@@ -269,15 +277,52 @@ a {
   opacity: 0.3;
 }
 
+.bookmarks-link:active {
+  background-color: var(--active-bookmark-color);
+}
+
 .main-header-searching {
-  display: grid;
-  grid-template-columns: auto auto;
+  width: 271px;
+  align-self: flex-start;
+}
+
+.search-in-site {
+  width: 271px;
+  margin: 0;
+  height: 42px;
+  border: none;
+  align-self: flex-start;
+  outline: none;
+  background-color: var(--top-bottom-color);
+}
+
+.search-in-site::placeholder {
+  padding-left: 42px;
+  display: inline-block;
+  color: var(--basic-white);
+  background-image: url("data:image/svg+xml,%3Csvg width='17' height='17' viewBox='0 0 17 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-opacity='30%25' clip-rule='evenodd' d='M13.458 12.044L17 15.586L15.586 17L12.044 13.458C10.782 14.421 9.21 15 7.5 15C3.35786 15 0 11.6421 0 7.5C0 3.35786 3.35786 0 7.5 0C11.6421 0 15 3.35786 15 7.5C15.0001 9.14309 14.4581 10.7403 13.458 12.044ZM7.5 2C4.467 2 2 4.467 2 7.5C2.00331 10.5362 4.4638 12.9967 7.5 13C10.532 13 13 10.532 13 7.5C13 4.467 10.532 2 7.5 2Z' fill='white'/%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+  background-position: left 17px top 50%;
+}
+
+.search-in-site:hover::placeholder {
+  padding-left: 42px;
+  background-image: url("data:image/svg+xml,%3Csvg width='17' height='17' viewBox='0 0 17 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M13.458 12.044L17 15.586L15.586 17L12.044 13.458C10.782 14.421 9.21 15 7.5 15C3.35786 15 0 11.6421 0 7.5C0 3.35786 3.35786 0 7.5 0C11.6421 0 15 3.35786 15 7.5C15.0001 9.14309 14.4581 10.7403 13.458 12.044ZM7.5 2C4.467 2 2 4.467 2 7.5C2.00331 10.5362 4.4638 12.9967 7.5 13C10.532 13 13 10.532 13 7.5C13 4.467 10.532 2 7.5 2Z' fill='white'/%3E%3C/svg%3E%0A");
+}
+
+.search-in-site:focus {
+  background-color: var(--basic-white);
+}
+
+.search-in-site:focus::placeholder{
+  color: var(--basic-black);
+  background-image: url("data:image/svg+xml,%3Csvg width='17' height='17' viewBox='0 0 17 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.458 12.044L17 15.586L15.586 17L12.044 13.458C10.782 14.421 9.21 15 7.5 15C3.35786 15 0 11.6421 0 7.5C0 3.35786 3.35786 0 7.5 0C11.6421 0 15 3.35786 15 7.5C15.0001 9.14309 14.4581 10.7403 13.458 12.044ZM7.5 2C4.467 2 2 4.467 2 7.5C2.00331 10.5362 4.4638 12.9967 7.5 13C10.532 13 13 10.532 13 7.5C13 4.467 10.532 2 7.5 2Z' fill='%23EE3643'/%3E%3C/svg%3E%0A");
 }
 
 .main-nav {
   background-color: var(--basic-gray);
+  box-shadow: inset 0 -5px 0 0 var(--top-bottom-color);
 }
-
 
 .login-link,
 .registration-link{
@@ -319,16 +364,22 @@ a {
   margin-right: 6px;
   width: 20px;
   height: 17px;
-  background-image: url("../img/icon_login.svg");
+  background-image: url("data:image/svg+xml,%3Csvg width='21' height='17' viewBox='0 0 21 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.875 8.5L6 0V6H0V11H6V17L14.875 8.5Z' fill='%23C5C5C5'/%3E%3Cpath d='M16.986 15.01H11.959V17H16.986C19.164 17 19.99 15.19 20.015 13.974V3.028C19.99 1.811 19.164 0 16.986 0H11.959V1.99H16.986C17.825 1.99 17.978 2.671 17.996 3.047V13.951C17.979 14.327 17.825 15.01 16.986 15.01Z' fill='%23C5C5C5'/%3E%3C/svg%3E%0A");
   background-repeat: no-repeat;
 }
 
 .login-link:hover::before {
-   /*var(--basic-gray);*/
+  background-image: url("data:image/svg+xml,%3Csvg width='21' height='17' viewBox='0 0 21 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.875 8.5L6 0V6H0V11H6V17L14.875 8.5Z' fill='%233D546F'/%3E%3Cpath d='M16.986 15.01H11.959V17H16.986C19.164 17 19.99 15.19 20.015 13.974V3.028C19.99 1.811 19.164 0 16.986 0H11.959V1.99H16.986C17.825 1.99 17.978 2.671 17.996 3.047V13.951C17.979 14.327 17.825 15.01 16.986 15.01Z' fill='%233D546F'/%3E%3C/svg%3E%0A");
 }
+
+.login-link:active::before {
+  background-image: url("data:image/svg+xml,%3Csvg width='21' height='17' viewBox='0 0 21 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.875 8.5L6 0V6H0V11H6V17L14.875 8.5Z' fill='%23C5C5C5'/%3E%3Cpath d='M16.986 15.01H11.959V17H16.986C19.164 17 19.99 15.19 20.015 13.974V3.028C19.99 1.811 19.164 0 16.986 0H11.959V1.99H16.986C17.825 1.99 17.978 2.671 17.996 3.047V13.951C17.979 14.327 17.825 15.01 16.986 15.01Z' fill='%23C5C5C5'/%3E%3C/svg%3E%0A");
+}
+
 
 .site-navigation-list {
   display: flex;
+  width: 940px;
   height: 60px;
   justify-content: space-around;
   list-style: none;
@@ -337,14 +388,29 @@ a {
   align-items: center;
 }
 
+.site-navigation-item {
+  display: flex;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+  flex: 0 1 100%;
+}
+
 .site-navigation-item a {
   color: var(--basic-white);
   font-size: 18px;
 }
+
+.site-navigation-item:hover {
+  background-color: var(--top-bottom-color);
+}
+
 .site-navigation-item a:active {
   color: var(--basic-white);
   opacity: 50%;
 }
+
+
 .address-header {
   margin-top: 3px;
   color: var(--basic-gray);
@@ -357,6 +423,7 @@ a {
 /******************************************************/
 
 .main-wrap {
+  max-width: 100%;
   display: grid;
   grid-template-rows: repeat(5, auto);
 }
@@ -492,8 +559,8 @@ a {
 }
 
 .catalog-slide-image {
-  width: 100%;
-  height: 100%;
+  max-width: 100%;
+  height: auto;
 }
 
 .content-container-slider-wrap {
@@ -621,7 +688,6 @@ a {
 .product-item-title-name {
   margin: 0 auto 7px auto;
   width: 185px;
-  height: 41px;
   color: var(--basic-black);
   font: bold normal 18px "PT Sans", "Arial", sans-serif;
   text-align: center  ;
@@ -661,7 +727,7 @@ a {
 }
 
 .manufacturer-item:active {
-  opacity: 0.15;
+  opacity: 0.5;
 }
 
 .common-header-wrap {
@@ -744,7 +810,7 @@ a {
   flex-direction: column;
   align-items: center;
   width: 220px;
-  height: 318px;
+  min-height: 318px;
   margin-bottom: 70px;
   border: 1px solid var(--product-container-border-color);
 }
@@ -772,9 +838,9 @@ a {
 .link-product-show {
   display: flex;
   flex-direction: column;
-  position: relative;
-  top: -280px;
-  left: 0;
+  position: absolute;
+  top: 38px;
+  left: 41px;
   z-index: -1;
   transform: scale(0);
   overflow: hidden;
@@ -824,7 +890,7 @@ a {
 
 .services-container-header{
   margin-top: 0;
- margin-bottom: 70px;
+  margin-bottom: 70px;
 }
 
 .services-header {
@@ -835,6 +901,10 @@ a {
 .services-description {
   display: flex;
   justify-content: space-between;
+}
+
+.services-option-container {
+
 }
 
 .common-information-wrap {
@@ -871,10 +941,16 @@ a {
 }
 
 .services-option-list {
+  max-height: 279px;
   min-width: 240px;
   list-style: none;
-  padding: 0;
-  margin: 0;
+  padding: 49px 0;
+  margin: -48px 0 0 0;
+  /*background-color: yellow;*/
+  align-content: center;
+  border-right: none;
+  box-shadow: inset -10px 0 20px -20px #34495e;
+  /*background: linear-gradient(270deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0) 20%);*/
 }
 
 .button-services-option {
@@ -885,6 +961,10 @@ a {
   line-height: 30px;
   text-align: center;
   color: var(--basic-white);
+  border: none;
+  box-shadow:
+            inset 0 -1px 0 0 var(--top-bottom-color),
+            inset 0 1px 0 0 var(--button-inner-shadow);
   background-color: var(--basic-gray);
 }
 
@@ -915,6 +995,7 @@ a {
 
 .delivery-description-header {
   margin-bottom: 30px ;
+  line-height: 24px;
 }
 
 .guarantee-description {
@@ -946,7 +1027,7 @@ a {
 /*Конец раздела стилизации основоного контейнера окна*/
 
 .main-footer {
-  height: 193px;
+  min-height: 193px;
   background-color: var(--basic-gray);
 }
 
