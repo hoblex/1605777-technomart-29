@@ -29,6 +29,7 @@
   --old-price-color: #A9A9A9;
   --active-bookmark-color: #161D29;
   --button-inner-shadow: #405069;
+  --logo-shadow-color: #8D1E26;
 }
 
 /*Описание шрифтов*/
@@ -126,6 +127,7 @@ a {
   margin: 0;
   padding: 0;
   font:  normal 13px "PT Sans", "Arial", sans-serif;
+  line-height: 24px;
 }
 
 .common-container-wrap {
@@ -136,6 +138,7 @@ a {
 /*Начало раздела стилизации Header*/
 /**********************************/
 .main-header {
+  max-height: 320px;
   margin-bottom: 59px;
   background-color: var(--additional-graylight);
 }
@@ -144,7 +147,6 @@ a {
   color: var(--basic-white);
   background-color: var(--top-bottom-color);
   height: 42px;
-  margin-bottom: 41px;
 }
 
 .main-header-top-container {
@@ -154,12 +156,13 @@ a {
 }
 
 .main-header-logo {
+  display: flex;
   background-color: var(--basic-red);
-  box-shadow: inset 0 -5px 0 rgba(0, 0, 0, 0.24);
-  width: 220px;
-  height: 47px;
-  text-align: center;
-  line-height: 55px;
+  border-bottom: 5px solid var(--logo-shadow-color);
+  min-width: 220px;
+  justify-content: center;
+  height: 42px;
+  margin-bottom: 5px;
 }
 
 .main-header-logo:active {
@@ -168,18 +171,21 @@ a {
 
 .main-header-base-wrap {
   display: flex;
-  margin-bottom: 45px;
+  align-items: stretch;
+  height: 158px;
 }
 
 .main-header-nav {
+  height: 60px;
   margin-bottom: 60px;
 }
 
 .about-shop {
-  margin-top: -5px;
-  margin-left: 30px;
+  height: auto;
+  margin-left: 28px;
   font-weight: normal;
   font-style: italic;
+  margin-top: 45px;
   font-size: 16px;
   line-height: 23px;
   color: var(--basic-red);
@@ -187,8 +193,10 @@ a {
 
 .contact-data-header {
   display: flex;
+  height: auto;
   width: 270px;
-  margin-left: 93px;
+  margin-top: 46px;
+  margin-left: 94px;
   flex-direction: column;
   align-items: center;
 }
@@ -202,8 +210,14 @@ a {
   height: 45px;
   line-height: 30px;
   font-size: 21px;
+  font-weight: bold;
   color: var(--basic-red);
-  outline: 3px solid var(--basic-white);
+  border: 3px solid var(--basic-white);
+  box-sizing: border-box;
+}
+
+.tel-header span {
+  margin-left: 31px;
 }
 
 .tel-header::before {
@@ -211,7 +225,7 @@ a {
   position: absolute;
   width: 19px;
   height: 19px;
-  left: 39px;
+  left: 38px;
   background-size: auto;
   background-image: url("../img/icon_phone.svg");
   background-repeat: no-repeat;
@@ -238,11 +252,20 @@ a {
   justify-content: center;
 }
 
-.bookmarks-link,
-.bucket-link {
- padding-left: 8px;
-
+.bookmarks-link-name {
+  margin-left: 18px;
+  margin-right: 5px;
 }
+
+.bucket-link-name  {
+  margin-left: 22px;
+  margin-right: 5px;
+}
+
+.place-an-order-link span{
+  margin-left: 1px;
+}
+
 
 .place-an-order-link {
   background-color: var(--basic-green);
@@ -267,6 +290,21 @@ a {
   background-size: auto;
   background-repeat: no-repeat;
 }
+
+.bookmarks-link::before {
+  width: 14px;
+  height: 16px;
+  opacity: 0.3;
+  left: 20px;
+}
+
+.bucket-link::before {
+  width: 15px;
+  height: 15px;
+  opacity: 0.3;
+  left: 26px;
+}
+
 
 .bookmarks-link::before {
   background-image: url("../img/icon_bookmark.svg");
@@ -297,7 +335,7 @@ a {
 
 .main-header-form-searching {
   display: flex;
-  width: 271px;
+  width: 270px;
   align-items: center;
   align-self: flex-start;
 }
@@ -309,6 +347,7 @@ a {
   flex-grow: 1;
   outline: none;
   background-color: var(--top-bottom-color);
+  /*line-height: 1.15rem;*/
 }
 
 .search-label {
@@ -318,8 +357,8 @@ a {
 }
 
 .search-label svg {
-  margin-left: 18px;
-  margin-right: 8px;
+  margin-left: 17px;
+  margin-right: 6px;
 }
 
 .search-label path {
@@ -333,6 +372,7 @@ a {
 
 .search-in-site-input::placeholder {
   color: var(--basic-white);
+  line-height: 115%;
 }
 
 .search-in-site-input:focus {
@@ -369,6 +409,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 46px;
   height: 45px;
   background-color: var(--basic-white);
   font-size: 21px;
@@ -377,14 +418,23 @@ a {
 }
 
 .login-link {
-  width: 121px;
+  width: 121px  ;
   margin-left: 69px;
 }
 
 .registration-link {
   width: 150px;
-  margin-left: 10px;
+  margin-left: 11px;
   margin-right: 0;
+}
+
+.login-link span {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.login-link svg {
+  transform: translateX(4px);
 }
 
 .login-link:hover,
@@ -512,11 +562,11 @@ a {
 
 .site-navigation-list {
   display: flex;
-  width: 940px;
+  width: 900px;
   height: 60px;
   justify-content: space-around;
   list-style: none;
-  margin: 0;
+  margin: 0 20px;
   padding: 0;
   align-items: center;
 }
@@ -534,8 +584,8 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 60px;
+  /*width: 100%;*/
+  /*height: 60px;*/
   color: var(--basic-white);
   font-size: 18px;
 }
@@ -574,7 +624,7 @@ a {
 }
 
 .services-container {
-  min-height: 522px;
+  max-height: 522px;
   background-color: var(--additional-graylight);
 }
 
@@ -588,11 +638,12 @@ a {
 }
 
 .content-container-item-name {
-  margin-left: 22px;
-  margin-top: 20px;
+  /*margin-top: 20px;*/
   font-size: 24px;
   font-weight: bold;
-  line-height: 30px;
+  /*line-height: 30px;*/
+  padding: 0;
+  margin: 23px 0 14px 23px;
 }
 
 .label-new-container{
@@ -605,14 +656,14 @@ a {
   top: 0;
   width: 70px;
   height: 70px;
-  background-image: linear-gradient(45deg, transparent 53px, var(--basic-red) 53px, var(--basic-red) 83px, transparent 83px);
+  background-image: linear-gradient(45deg, transparent 51px, var(--basic-red) 51px, var(--basic-red) 82px, transparent 82px);
   z-index: 999;
 }
 
 .label-new p {
-  position: relative;
-  margin-right: -200px;
-  margin-top: 75px;
+  position: absolute;
+  bottom: -3px;
+  right: 13px;
   color: var(--basic-white);
   text-transform: uppercase;
   line-height: 70px;
@@ -632,7 +683,10 @@ a {
   text-transform: uppercase;
   text-align: center;
   vertical-align: bottom;
-  margin: 0 0 21px 22px;
+  margin-left: 23px;
+  margin-bottom: 0;
+  margin-top: 17px;
+  /*margin: 0 0 21px 22px;*/
 }
 
 .content-container-item a {
@@ -650,10 +704,11 @@ a {
 
 .content-container-materials {
   max-width: 300px;
+  height: 123px;
   background-color: var(--material-background-color);
   background-image: url("../img/icon_paint_bucket.svg");
   background-repeat: no-repeat;
-  background-position: center right 43px;
+  background-position: bottom 27px right 42px;
 }
 
 .content-container-tools {
@@ -661,7 +716,7 @@ a {
   background-color: var(--tools-background-color);
   background-image: url("../img/icon_drill.svg");
   background-repeat: no-repeat;
-  background-position: center right 31px;
+  background-position: bottom 28px right 31px;
 }
 
 .content-container-technics {
@@ -685,7 +740,7 @@ a {
   background-color: var(--delivery-background-color);
   background-image: url("../img/icon_truck.svg");
   background-repeat: no-repeat;
-  background-position: center right 43px;
+  background-position: bottom 28px right 31px;
 }
 
 .content-container-slider {
@@ -846,7 +901,7 @@ a {
   flex-wrap: wrap;
   list-style: none;
   padding: 0;
-  margin:0 -20px 70px 0;
+  margin:0 -20px 50px 0;
 }
 
 
@@ -883,7 +938,7 @@ a {
   height: 89px;
   align-items: center;
   margin-bottom: 20px;
-  padding-right: 20px;
+  padding: 0;
   background-color: var(--common-header-background);
 }
 
@@ -918,10 +973,14 @@ a {
   margin-left: 28px;
 }
 
-.button-all-popular-product,
+.button-all-popular-product {
+  margin-right: 14px;
+ }
+
 .button-all-manufacturer {
   margin-right: 19px;
- }
+}
+
 
 .regular-button {
   width: 192px;
@@ -931,7 +990,6 @@ a {
   color: var(--basic-white);
   background-color: var(--basic-red);
   text-transform: uppercase;
-  margin: 0;
 }
 
 .regular-button:hover {
@@ -943,23 +1001,29 @@ a {
 }
 
 .product-container-list {
-  display: grid;
-  grid-template-columns: repeat(4, 220px);
-  gap: 20px;
+  display: flex;
   list-style: none;
   padding: 0;
   margin: 0;
   min-height: 220px;
+  flex-wrap: wrap;
+
 }
 
 .product-item {
   display: flex;
+  margin-right: 20px;
   flex-direction: column;
   align-items: center;
   width: 220px;
   min-height: 318px;
   margin-bottom: 70px;
-  border: 1px solid var(--product-container-border-color);
+  outline: 1px solid var(--product-container-border-color);
+  box-sizing: border-box;
+}
+
+.product-item:nth-child(4n) {
+  margin-right: 0;
 }
 
 .product-item:hover {
@@ -1011,17 +1075,21 @@ a {
 
 
 .price-view {
-  display: block;
-  margin: 0 auto 21px auto;
-  width: 141px;
+  display: inline-block;
+  margin-left: 13px;
+  padding-right: 10px;
+  width: 131px;
   height: 38px;
   line-height: 38px;
   font-family: "PT Sans", "Arial", sans-serif;
   font-weight: bold;
   font-size: 17px;
   text-align: center;
+  vertical-align: middle;
   color: var(--basic-white);
-  border-radius: 5px;
+  border-radius: 3px;
+  border: none;
+  text-transform: uppercase;
   background-color: var(--basic-red);
   background-image:
             linear-gradient(225deg, white 13px, transparent 13px),
@@ -1057,17 +1125,18 @@ a {
 .common-information-wrap {
   display: flex;
   justify-content: space-between;
-  margin-top: 70px;
-  margin-bottom: 70px;
-  min-height: 356px;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  max-height: 496px;
 }
 
 .common-information-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  /*justify-content: space-around;*/
   margin: 0;
   width: 460px;
+  max-height: 356px;
 }
 
 .common-information-contacts {
@@ -1075,6 +1144,7 @@ a {
   flex-direction: column;
   justify-content: space-between;
   margin: 0;
+  max-height: 356px;
 }
 
 
@@ -1082,9 +1152,13 @@ a {
   margin-bottom: 24px;
 }
 
+.common-information-header {
+  margin-bottom: 24px;
+}
+
 
 .common-information-about-shopping {
-  margin-bottom: 0;
+  margin-bottom: 28px;
 }
 
 .services-option-list {
@@ -1092,13 +1166,10 @@ a {
   min-width: 240px;
   list-style: none;
   padding: 49px 0;
-  margin: -48px 0 0 0;
-  /*background-color: yellow;*/
+  margin: -44px 0 0 0;
   align-content: center;
   border-right: none;
   position: relative;
-  /*box-shadow: inset -10px 0 20px -20px #34495e;*/
-  /*background: linear-gradient(270deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0) 20%);*/
 }
 
 .services-option-list::after {
@@ -1114,12 +1185,16 @@ a {
 }
 
 .button-services-option {
+  display: inline-block;
   width: 240px;
   height: 61px;
   font-size: 21px;
   font-weight: bold;
   line-height: 30px;
-  text-align: center;
+  text-align: start;
+  padding-left: 22px;
+  vertical-align: center;
+  padding-bottom: 8px;
   color: var(--basic-white);
   border: none;
   box-shadow:
@@ -1141,7 +1216,7 @@ a {
 }
 
 .common-information-map-pickup {
- margin-bottom: 20px;
+ margin-bottom: 19px;
 }
 
 
@@ -1150,12 +1225,11 @@ a {
   margin-left: 80px;
   background-image: url("../img/delivery_truck.png");
   background-repeat: no-repeat;
-  background-position: right;
+  background-position: top 21px right ;
 }
 
 .delivery-description-header {
   margin-bottom: 30px ;
-  line-height: 24px;
 }
 
 .guarantee-description {
@@ -1168,31 +1242,53 @@ a {
   background-repeat: no-repeat;
 }
 
+.common-information-delivery {
+  margin-bottom: 9px;
+}
+
 .delivery-list {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin-top: 0;
   font-size: 18px;
   color: var(--basic-black);
-  line-height: 30px;
 }
 
+.delivery-item {
+  position: relative;
+  margin-left: 37px;
+  margin-bottom: 12px;
+}
 
-.delivery-item span {
-  color: var(--basic-red);
-  font-weight: bold;
-  margin-right: 5px;
+.delivery-item::before {
+  content: "";
+  position: absolute;
+  background-image: url("../img/icon_red_line.svg");
+  left: -37px;
+  top: 11px;
+  width: 25px;
+  height: 2px;
+}
+
+.delivery-list:last-child {
+  margin-bottom: 0;
+}
+
+.button-company-information {
+
+  width: 220px;
 }
 
 /*Конец раздела стилизации основоного контейнера окна*/
 
 .main-footer {
-  min-height: 193px;
+  max-height: 300px;
   background-color: var(--basic-gray);
 }
 
 .main-footer-nav {
   font-size: 18px;
+  max-height: 193px;
 }
 
 .tel-footer {
@@ -1202,6 +1298,7 @@ a {
 .main-footer-wrap {
   display: flex;
   flex-direction: column;
+
 }
 
 .main-footer-first-line,
@@ -1211,11 +1308,16 @@ a {
 }
 
 .main-footer-first-line {
+  margin-bottom: 1px;
+}
+
+.main-footer-first-line {
   height: 90px;
 }
 
 .main-footer-second-line {
   margin-bottom: 54px;
+  margin-left: 2px;
 }
 
 .main-footer-contact-information {
@@ -1241,13 +1343,13 @@ a {
 }
 
 .footer-nav-line1 {
-  align-items: flex-end;
+  margin-top: 37px;
   margin-left: 173px;
 }
 
 
 .footer-nav-line2 {
-  align-items: center;
+  margin-top: 4px;
   margin-left: 92px;
 }
 
@@ -1320,6 +1422,8 @@ a {
   display: flex;
   width: 134px;
   justify-content: space-between;
+  margin-left: 38px;
+  margin-top: 5px;
 }
 
 .social-link-container {
