@@ -1263,7 +1263,7 @@ a {
 .delivery-item::before {
   content: "";
   position: absolute;
-  background-image: url("../img/icon_red_line.svg");
+  background-image: url("../img/icon_red_line.png");
   left: -37px;
   top: 11px;
   width: 25px;
