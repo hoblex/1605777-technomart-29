@@ -526,10 +526,16 @@ a {
   height: 60px;
   justify-content: center;
   align-items: center;
-  flex: 0 1 100%;
+  flex: 1 0 auto;
 }
 
 .site-navigation-item a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 60px;
   color: var(--basic-white);
   font-size: 18px;
 }
@@ -540,7 +546,7 @@ a {
 
 .site-navigation-item a:active {
   color: var(--basic-white);
-  opacity: 50%;
+  opacity: 0.5;
 }
 
 
