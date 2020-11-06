@@ -738,20 +738,25 @@ a {
 }
 
 .content-container-slider {
-  display: flex;
-  flex-direction: column;
-  width: 620px;
-  height: 266px;
-  margin-bottom: 59px;
+  position: relative;
   grid-area: 2 / 1 / -1 / 3;
 }
 
-.content-container-slider-first {
+.content-container-slider-item {
   display: none;
 }
 
-.content-container-slider-second {
+.current-slide {
   display: block;
+}
+
+.content-container-slider-item-wrap {
+  position: relative;
+  display: flex;
+  width: 620px;
+  height: 266px;
+  flex-direction: column;
+  margin-bottom: 59px;
 }
 
 .catalog-slide-image {
@@ -759,16 +764,11 @@ a {
   height: auto;
 }
 
-.content-container-slider-wrap {
+.slider-header {
   position: relative;
-  margin-top: -243px;
-  margin-left: 24px;
-  margin-right: 24px;
+  bottom: 243px;
   z-index: 1;
-}
-
-.slider-header{
- margin-bottom: 34px;
+  left: 25px;
 }
 
 .slider-header h2{
@@ -781,7 +781,7 @@ a {
 }
 
 .slider-header p{
-  margin: 0;
+  margin: 0 ;
   font-size: 18px;
 }
 
@@ -791,18 +791,26 @@ a {
   justify-content: space-between;
 }
 
-.slide-catalog-radio-prev-wrap {
-  display: flex;
-  width: 301px;
-  margin-bottom: 27px;
-  justify-content: space-between;
-}
+/*.slide-catalog-radio-prev-wrap {*/
+/*  display: flex;*/
+/*  width: 301px;*/
+/*  margin-bottom: 27px;*/
+/*  justify-content: space-between;*/
+/*}*/
 
 .change-slide-prev {
   border: 0;
   background: transparent url("../img/icon_left.svg") no-repeat;
   width: 22px;
   height: 44px;
+}
+
+.change-slide-buttons-wrap {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  width: 620px;
 }
 
 .change-slide-next {
@@ -812,13 +820,28 @@ a {
   height: 44px;
 }
 
-.change-slide-radio-next,
-.change-slide-radio-prev {
+.change-slide-big-buttons {
+  display: flex;
+  margin-left: 25px;
+  margin-right: 20px;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
 
+
+.change-slide-radio-buttons {
+  margin: 0 auto;
+  display: flex;
+}
+
+.change-slide-radio-prev {
+  margin-right: 10px;
 }
 
 .open-catalog-button {
-  margin-right: 79px;
+  position: relative;
+  bottom: 130px;
+  left: 25px;
 }
 
 .link-product-to-buy {
@@ -1224,6 +1247,7 @@ a {
   flex-grow: 1;
   margin-left: 80px;
   background-image: url("../img/delivery_truck.png");
+  /*background-color: var(--basic-graylight-30);*/
   background-repeat: no-repeat;
   background-position: top 21px right ;
 }
