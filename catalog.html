@@ -15,12 +15,16 @@
       <a  class="main-header-logo"  href="blank.html">
         <img src="img/logo_technomart.svg" alt="Логотип магазина Техномарт">
       </a>
-      <div  class="main-header-form-searching">
-        <label for="searching"></label>
-        <input class="search-in-site-input" id="searching" type="search" placeholder="Поиск:" name="search-in-site">
-      </div>
-      <a  href="blank.html" class="bookmarks-link">Закладки: <span>0</span></a>
-      <a  href="blank.html" class="bucket-link">Корзина: <span>0</span></a>
+      <form class="main-header-form-searching" action="https://echo.htmlacademy.ru/courses" method="post">
+        <label class="search-label" for="search">
+          <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M13.458 12.044L17 15.586L15.586 17L12.044 13.458C10.782 14.421 9.21 15 7.5 15C3.35786 15 0 11.6421 0 7.5C0 3.35786 3.35786 0 7.5 0C11.6421 0 15 3.35786 15 7.5C15.0001 9.14309 14.4581 10.7403 13.458 12.044ZM7.5 2C4.467 2 2 4.467 2 7.5C2.00331 10.5362 4.4638 12.9967 7.5 13C10.532 13 13 10.532 13 7.5C13 4.467 10.532 2 7.5 2Z" fill="white"/>
+          </svg>
+        </label>
+        <input class="search-in-site-input" id="search" type="search" placeholder="Поиск:" name="search-in-site"/>
+      </form>
+      <a  href="blank.html" class="bookmarks-link"><span  class="bookmarks-link-name">Закладки:</span> <span>0</span></a>
+      <a  href="blank.html" class="bucket-link"><span class="bucket-link-name">Корзина:</span> <span>0</span></a>
       <a href="blank.html"  class="place-an-order-link"><span>Оформить заказ</span></a>
     </div>
   </section>
@@ -32,11 +36,11 @@
       и инструментов для ремонта
     </div>
     <div class="contact-data-header">
-      <a href="tel:+78125550500" class="tel-header">+7(812)555-05-00</a>
+      <a href="tel:+78125550500" class="tel-header"><span>+7&nbsp;(812)&nbsp;555-05-55</span></a>
       <p class="address-header">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
     </div>
 
-    <div  class="pesronal-account-header">
+    <div  class="personal-account-header">
       <div  class="personal-account-wrap">
         <a class="profile-link" href="blank.html">
           <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -53,7 +57,7 @@
       </div>
       <div  class="orders-personal-links">
         <a class="my-orders-link" href="blank.html">Мои заказы</a>
-        <a class="pesronal-account-link" href="blank.html">Личный кабинет</a>
+        <a class="personal-account-link" href="blank.html">Личный кабинет</a>
       </div>
     </div>
   </section>
@@ -70,41 +74,86 @@
   </nav>
 </header>
 <main class="page-catalog main-wrap">
-  <ul class="common-container-wrap breadcrumbs">
-    <li>
-      <a  class="breadcrumbs-item breadcrumbs-home" href="index.html"></a>
-    </li>
-    <li>
-      <a  class="breadcrumbs-item" href="catalog.html">Каталог</a>
-    </li>
-    <li>
-      <a  class="breadcrumbs-item" href="catalog.html">Инструмент</a>
-    </li>
-    <li>
-      <a  class="breadcrumbs-item breadcrumbs-current" href="catalog.html">Перфораторы</a>
-    </li>
-  </ul>
+  <div  class="common-container-wrap">
+    <ul class="breadcrumbs">
+      <li>
+        <a  class="breadcrumbs-item breadcrumbs-home" href="index.html"></a>
+      </li>
+      <li>
+        <a  class="breadcrumbs-item" href="catalog.html">Каталог</a>
+      </li>
+      <li>
+        <a  class="breadcrumbs-item" href="catalog.html">Инструмент</a>
+      </li>
+      <li>
+        <a  class="breadcrumbs-item breadcrumbs-current" href="catalog.html">Перфораторы</a>
+      </li>
+    </ul>
+  </div>
   <div class="common-container-wrap  catalog-header">
     <h2 class="common-header popular-product-header">Перфораторы</h2>
   </div>
   <section class="common-container-wrap catalog-container">
-      <div class="catalog-fiters-feild">
-        <h2 class="visually-hidden">Фильтр</h2>
+      <div class="catalog-filter-field">
+        <h2 class="visually-hidden">Фильтры</h2>
         <div class="catalog-filter-header">
           Фильтр:
         </div>
-        <div class="catalog-filters">
-
-        </div>
+        <form class="catalog-filter-form" action="https://echo.htmlacademy.ru"  method="get">
+          <fieldset class="catalog-filter-price-field">
+            <legend class="catalog-filter-price-legend-name">Цена:</legend>
+            <div class="price-slider-block">
+              <div class="price-slider">
+                <div class="bar"  style="width: 70%; margin-left: 5%"></div>
+              </div>
+              <div class="toggle toggle-min"></div>
+              <div class="toggle toggle-max"></div>
+            </div>
+            <div class="slider-range-wrap">
+              <label  class="range-output-min"><input class="range-output-min" type="text" name="price-range-min" value="0"  tabindex="0"></label>
+              <label class="range-output-max"><input class="range-output-max" type="text" name="price-range-max" value="30000"  tabindex="0"></label>
+            </div>
+          </fieldset>
+          <fieldset class="catalog-filter-manufacturer-field">
+            <legend class="catalog-filter-manufacturer-legend-name">Производители:</legend>
+            <label  class="manufacturer-checkbox"><input type="checkbox" class="manufacturer-checkbox-input"  name="bosch"><span  class="check-box"></span><span  class="check-box-name">Bosch</span></label>
+            <label  class="manufacturer-checkbox"><input type="checkbox" class="manufacturer-checkbox-input"  name="interskol"><span  class="check-box"></span><span  class="check-box-name">Интерскол</span></label>
+            <label  class="manufacturer-checkbox"><input type="checkbox" class="manufacturer-checkbox-input"  name="makita"><span  class="check-box"></span><span  class="check-box-name">Makita</span></label>
+            <label  class="manufacturer-checkbox"><input type="checkbox" class="manufacturer-checkbox-input"  name="dewalt" disabled checked><span  class="check-box"></span><span  class="check-box-name">DeWalt</span></label>
+            <label  class="manufacturer-checkbox"><input type="checkbox" class="manufacturer-checkbox-input"  name="hitachi"  disabled><span  class="check-box"></span><span  class="check-box-name">Hitachi</span></label>
+          </fieldset>
+          <fieldset class="catalog-filter-supply-field">
+            <legend class="catalog-filter-supply-legend-name">Питание:</legend>
+            <label  class="electricity-supply"><input type="radio" name="supply-type" class="electricity-supply-input" value="accum"  checked><span  class="radio-element"></span>Аккумуляторные</label>
+            <label  class="electricity-supply"><input type="radio"  name="supply-type" class="electricity-supply-input" value="mains"><span  class="radio-element"></span>Сетевые</label>
+          </fieldset>
+          <button class="catalog-filter-show-results">Показать</button>
+        </form>
       </div>
       <div  class="catalog-container-field-wrap">
-        <div class="catalog-conteiner-field-header">
+        <div class="catalog-container-field-header">
           <p>Сортировка:</p>
-          <button type="button">По цене</button>
-          <button type="button">По типу</button>
-          <button type="button">По функционалу</button>
-          <button type="button">Вверх</button>
-          <button type="button">Ввниз</button>
+          <ul class="catalog-container-sort">
+            <li class="catalog-container-sort-item  sort-price"><a href="#">По цене</a></li>
+            <li class="catalog-container-sort-item  sort-type"><a href="#">По типу</a></li>
+            <li class="catalog-container-sort-item  sort-functionality"><a href="#">По функционалу</a></li>
+            <li class="catalog-container-sort-item  sort-up">
+              <a  class="sort-up-link" href="#">
+                <svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5.66235 0L11.1624 10L0.162354 10" fill="#C5C5C5"/>
+                </svg>
+              </a>
+            </li>
+            <li class="catalog-container-sort-item  sort-down">
+              <a  class="sort-down-link" href="#">
+                <span>
+                  <svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5.66235 10L0.162354 0H11.1624" fill="#C5C5C5"/>
+                  </svg>
+                </span>
+              </a>
+            </li>
+          </ul>
         </div>
         <ul class="product-container-list catalog-container-field">
           <li class="product-item">
@@ -174,7 +223,7 @@
             </div>
           </li>
           <li class="product-item">
-            <h3 class="product-item-title-name">Перфоратор BOSCH BFG 9000 Перфоратор BOSCH BFG 9000</h3>
+            <h3 class="product-item-title-name">Перфоратор BOSCH BFG 9000</h3>
             <div class="product-card-image-wrap">
               <img src="img/product_bosch_bfg9000.jpg" class="product-card-image" alt="Перфоратор BOSCH9000" width="184"
                    height="164">
@@ -258,15 +307,31 @@
             </div>
           </li>
         </ul>
+        <ul class="catalog-container-pagination-list">
+          <li class="catalog-container-pagination-item catalog-container-pagination-item-current"><a href="#">1</a></li>
+          <li class="catalog-container-pagination-item"><a href="#">2</a></li>
+          <li class="catalog-container-pagination-item"><a href="#">3</a></li>
+          <li class="catalog-container-pagination-item"><a href="#">4</a></li>
+        </ul>
       </div>
   </section>
+  <article class="catalog-article">
+    <div  class="common-container-wrap catalog-article-wrap">
+      <div class="catalog-article-container-header">
+        <h2 class="common-header services-header">Пара слов о перфораторах</h2>
+        <p class="common-text">Перфоратор — универсальный строительный инструмент. Предназначен для сверления и долбления отверстий в кирпиче, бетоне и камне.</p>
+        <p class="common-text">Существуют электромеханические и пневматические перфораторы. Современные модели могут выполнять функции дрели, шуруповерта и отбойного молотка.</p>
+        <p class="common-text">В ассортиментном ряду есть выбор «трехрежимников»: в одном устройстве будут совмещены отбойный молоток и ударная дрель.</p>
+      </div>
+    </div>
+  </article>
 </main>
 <footer class="main-footer">
   <section class="main-footer-nav">
     <div  class="common-container-wrap main-footer-wrap">
       <h3 class="visually-hidden">Контактная информация</h3>
       <div  class="main-footer-first-line">
-        <a class="main-header-logo">
+        <a class="main-footer-logo">
           <img src="img/logo_red_technomart.svg" alt="Логотип магазина Техномарт">
         </a>
         <ul class="footer-nav-line1 nav-wrap">
@@ -280,7 +345,7 @@
       <div  class="main-footer-second-line">
         <div class="main-footer-contact-information">
           <p class="address-footer">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
-          <a href="tel:+78125550500" class="tel-footer">+7(812)555-05-00</a>
+          <a href="tel:+78125550500" class="tel-footer">+7&nbsp;(812)&nbsp;555-05-55</a>
         </div>
         <ul class="footer-nav-line2 nav-wrap">
           <li class="footer-nav-line2-item"><a href="blank.html">Материалы</a></li>
@@ -299,17 +364,35 @@
       </div>
       <div class="main-footer-social-container">
         <h3 class="visually-hidden">Наши странички в соцсетях</h3>
-        <a href="https://vk.com/htmlacademy" title="Вконтакте" class="vk-link"></a>
-        <a href="https://www.facebook.com/htmlacademy/" title="Фейсбук" class="fb-link"></a>
-        <a href="https://www.instagram.com/htmlacademy/?hl=ru" title="Инстаграм" class="inst-link"></a>
+        <div  class="social-link-container">
+          <a href="https://vk.com/htmlacademy" title="Вконтакте" class="vk-link">
+            <svg width="26" height="15" viewBox="0 0 26 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15.5403 11.7281C16.4609 11.4384 17.6395 13.6406 18.8943 14.4834C19.836 15.1219 20.5573 14.9841 20.5573 14.9841L23.9017 14.9372C23.9017 14.9372 25.6495 14.8322 24.8232 13.4803C24.7549 13.3678 24.3389 12.4781 22.334 10.6472C20.2376 8.73186 20.5217 9.04218 23.0456 5.73093C24.5835 3.71249 25.1988 2.47968 25.0062 1.95468C24.8213 1.44936 23.6918 1.58061 23.6918 1.58061L19.9237 1.60593C19.5568 1.60686 19.2458 1.71749 19.1042 2.08874C19.1013 2.09249 18.5062 3.65061 17.7127 4.9753C16.0362 7.77749 15.3669 7.92655 15.0896 7.75124C14.4531 7.3453 14.6139 6.1228 14.6139 5.25374C14.6139 2.5378 15.0299 1.4053 13.7992 1.1128C13.388 1.0153 13.0876 0.951552 12.0389 0.942177C10.6985 0.922489 9.56027 0.942177 8.91508 1.25061C8.48656 1.45968 8.15819 1.91811 8.35753 1.94436C8.6079 1.97718 9.1693 2.09436 9.46975 2.49374C9.8559 3.01124 9.84434 4.17093 9.84434 4.17093C9.84434 4.17093 10.0649 7.36874 9.32434 7.7653C8.8159 8.03718 8.12064 7.48218 6.62516 4.9378C5.86153 3.63655 5.28471 2.19843 5.28471 2.19843C5.28471 2.19843 5.17301 1.93124 4.97079 1.78499C4.73005 1.61155 4.39301 1.55624 4.39301 1.55624L0.816563 1.57874C0.816563 1.57874 0.27923 1.59374 0.0818227 1.82436C-0.0934366 2.02874 0.0673782 2.45061 0.0673782 2.45061C0.0673782 2.45061 2.86864 8.90155 6.04064 12.1509C8.94879 15.1341 12.2537 14.9362 12.2537 14.9362H13.7511C13.7511 14.9362 14.2027 14.8856 14.4338 14.6437C14.6495 14.4187 14.6399 13.9959 14.6399 13.9959C14.6399 13.9959 14.61 12.0187 15.5403 11.7281Z" fill="white"/>
+            </svg>
+          </a>
+        </div>
+        <div  class="social-link-container">
+          <a href="https://www.facebook.com/htmlacademy/" title="Фейсбук" class="fb-link">
+            <svg width="12" height="22" viewBox="0 0 12 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 4V0H8C5.79086 0 4 1.79086 4 4V8H0V12H4V22H8V12H12V8H8V4H12Z" fill="white"/>
+            </svg>
+          </a>
+        </div>
+        <div  class="social-link-container">
+          <a href="https://www.instagram.com/htmlacademy/?hl=ru" title="Инстаграм" class="inst-link">
+            <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M3 0H18C19.65 0 21 1.35 21 3V18C21 19.65 19.65 21 18 21H3C1.35 21 0 19.65 0 18V3C0 1.35 1.35 0 3 0ZM14 10.5C14 8.57 12.43 7 10.5 7C8.57 7 7 8.57 7 10.5C7 12.43 8.57 14 10.5 14C12.43 14 14 12.43 14 10.5ZM3 18V9H4.181C4.0626 9.49127 4.00186 9.99467 4 10.5C4 14.0899 6.91015 17 10.5 17C14.0899 17 17 14.0899 17 10.5C16.9986 9.99464 16.9379 9.49118 16.819 9H18V18H3ZM14 7H18V3H14V7Z" fill="white"/>
+            </svg>
+          </a>
+        </div>
       </div>
       <div  class="main-footer-feedback-wrap">
         <div class="main-footer-feedback">
-          <p>Обратная связь</p>
+          <p>Обратная связь:</p>
           <a href="mailto:mail@htmlacademy.ru">mail@htmlacademy.ru</a>
         </div>
         <div class="main-footer-developer-link">
-          <p>Резработано - </p>
+          <p>Резработано&nbsp;&ndash;&nbsp;</p>
           <a href="https://htmlacademy.ru/intensive/htmlcss">htmlacademy.ru</a>
         </div>
       </div>
