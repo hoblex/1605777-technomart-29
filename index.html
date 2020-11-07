@@ -24,7 +24,7 @@
         <input class="search-in-site-input" id="search" type="search" placeholder="Поиск:" name="search-in-site"/>
       </form>
       <a  href="blank.html" class="bookmarks-link"><span  class="bookmarks-link-name">Закладки:</span> <span>0</span></a>
-      <a  href="blank.html" class="bucket-link"><span class="bucket-link-name">Корзина:</span> <span>0</span></a>
+      <a  href="blank.html" class="shopping-cart-link"><span class="shopping-cart-link-name">Корзина:</span> <span  class="counts-of-goods">0</span></a>
       <a href="blank.html"  class="place-an-order-link"><span>Оформить заказ</span></a>
     </div>
   </section>
@@ -50,7 +50,7 @@
   </section>
   <nav class="common-container-wrap main-header-nav main-nav">
     <ul class="site-navigation-list">
-      <li class="site-navigation-item"><a href="blank.html">Главная</a></li>
+      <li class="site-navigation-item"><a href="index.html">Главная</a></li>
       <li class="site-navigation-item"><a href="blank.html">Компания</a></li>
       <li class="site-navigation-item"><a href="catalog.html">Каталог</a></li>
       <li class="site-navigation-item"><a href="blank.html">Новости</a></li>
@@ -128,13 +128,18 @@
       <h2 class="common-header popular-product-header">Популярные товары:</h2>
       <a class="regular-button button-all-popular-product" href="blank.html">Все популярные товары</a>
     </div>
-    <ul class="product-container-list">
+    <ul class="product-container-list main-page-product-container-field">
       <li class="product-item">
         <h3  class="product-item-title-name">Перфоратор BOSCH BFG 9000</h3>
         <div  class="product-card-image-wrap">
           <img src="img/product_bosch_bfg9000.jpg" class="product-card-image" alt="Перфоратор BOSCH9000" width="184" height="164">
         </div>
-        <p  class="old-price"><del>32500 Р.</del></p>
+        <div class="label-new">
+          <p>new</p>
+        </div>
+        <p  class="old-price">
+          <del>32500 р.</del>
+        </p>
         <a href="blank.html" class="price-view">25500 Р.</a>
         <div  class="link-product-show">
           <a href="blank.html" class="link-product-to-buy">Купить</a>
@@ -161,8 +166,11 @@
         <div  class="product-card-image-wrap">
           <img src="img/product_bosch_bfg6000.jpg" class="product-card-image" alt="Перфоратор BOSCH6000" width="144" height="128">
         </div>
-        <p  class="old-price"><del>30500 Р.</del></p>
-        <a  href="blank.html" class="price-view">25500 Р.</a>
+        <div class="label-new">
+          <p>new</p>
+        </div>
+        <p  class="old-price"><del>30500 р.</del></p>
+        <a  href="blank.html" class="price-view">25500 р.</a>
         <div  class="link-product-show">
           <a href="blank.html" class="link-product-to-buy">Купить</a>
           <a href="blank.html" class="link-product-to-bookmarks">В закладки</a>
@@ -176,8 +184,10 @@
         <div class="label-new">
           <p>new</p>
         </div>
-        <p  class="old-price"><del>25500 Р.</del></p>
-        <a  href="blank.html" class="price-view">12500 Р.</a>
+        <p  class="old-price">
+          <del>25500 р.</del>
+        </p>
+        <a  href="blank.html" class="price-view">12500 р.</a>
         <div  class="link-product-show">
           <a href="blank.html" class="link-product-to-buy">Купить</a>
           <a href="blank.html" class="link-product-to-bookmarks">В закладки</a>
@@ -211,7 +221,7 @@
       <div class="services-description">
         <div class="services-option-container">
           <ul class="services-option-list">
-            <li class="services-option-item">
+            <li class="services-option-item activated-sevices-option-item">
               <button type="button" class="button-services-option">Доставка</button>
             </li>
             <li class="services-option-item">
