@@ -37,6 +37,7 @@
   --slider-bar-center-color: #ABABAB;
   --slider-bar-shadow-color: #CFCFCF;
   --good-in-cart-color: #F1F1F1;
+  --modal-feedback-background-color: #F4F4F4;
 }
 
 /*Описание шрифтов*/
@@ -1113,6 +1114,8 @@ a {
   color: var(--basic-white);
   background-color: var(--basic-red);
   text-transform: uppercase;
+  border: none;
+  cursor: pointer;
 }
 
 .regular-button:hover {
@@ -1178,6 +1181,7 @@ a {
   min-height: 178px;
   order: -1;
   z-index: 1;
+  object-fit: contain;
 }
 
 .link-product-show {
@@ -2156,12 +2160,31 @@ a {
 }
 
 .modal-feedback {
+  /*display: none;*/
   margin: 0;
   padding: 0;
-  left: 38.5%;
-  top: 655px;
+  left: 37.4%;
+  bottom: 352px;
   width: 620px;
-  height: 430px;
+  height: 423px;
+  border-top: 7px solid var(--basic-red);
+  z-index: 1001;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+.form-send-mail {
+  margin: 0;
+  padding: 0;
+}
+
+.modal-map {
+  display: none;
+  margin: 0;
+  padding: 0;
+  left: 31.5%;
+  top: 500px;
+  width: 949px;
+  height: 449px;
   border-top: 7px solid var(--basic-red);
   z-index: 1001;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
@@ -2188,8 +2211,8 @@ a {
   left: 82px;
 }
 
-.close-modal-good-in-cart {
-  /*display: none;*/
+.close-modal-good-in-cart,
+.close-modal-map {
   border: none;
   outline: none;
   background: none;
@@ -2197,7 +2220,8 @@ a {
   margin: 0;
 }
 
-.close-modal-good-in-cart::after {
+.close-modal-good-in-cart::after,
+.close-modal-map::after {
   content: "";
   position: absolute;
   left: 95%;
@@ -2208,8 +2232,14 @@ a {
   cursor: pointer;
 }
 
+.close-modal-map::after {
+  left: 96%;
+}
+
 .close-modal-good-in-cart:focus,
-.close-modal-good-in-cart:active {
+.close-modal-good-in-cart:active,
+.close-modal-map:focus,
+.close-modal-map:active {
   outline: none;
 }
 
@@ -2230,5 +2260,95 @@ a {
 .button-continue-shopping {
   background-color: var(--basic-white);
   color: var(--basic-black);
+}
+
+.form-send-mail label {
+  font-size: 18px;
+}
+
+.person-name input::placeholder,
+.person-email input::placeholder ,
+.email-text textarea::placeholder {
+  font-family: "PT Sans", "Arial", sans-serif;
+  font-size: 13px;
+  color: var(--old-price-color);
+}
+
+.person-name input::placeholder {
+  padding: 7px 8px 7px 12px;
+}
+
+.person-email input::placeholder {
+  padding: 7px 10px 7px 12px;
+}
+
+.email-text textarea::placeholder {
+  padding-top: 6px;
+  padding-left: 12px;
+}
+
+.person-name input,
+.person-email input {
+  width: 220px;
+  height: 38px;
+  box-sizing: border-box;
+}
+
+.person-name input,
+.person-email input,
+.email-text textarea {
+  border: 2px solid var(--basic-graylight);
+  border-radius: 2px;
+  margin-top: 10px;
+}
+
+.email-text textarea {
+  resize: none;
+  height: 105px;
+}
+
+.modal-feedback-wrap {
+  width: 460px;
+  margin: 0 auto;
+  padding: 0;
+  height: 311px;
+  box-sizing: border-box;
+}
+
+.button-send-mail-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 112px;
+  margin: 0;
+  padding: 0;
+  background-color: var(--modal-feedback-background-color);
+}
+
+.button-send-main {
+  width: 460px;
+  border: none;
+  outline: none;
+}
+
+.person-name,
+.person-email,
+.email-text {
+  display: flex;
+  flex-direction: column;
+  width: 220px;
+  margin-bottom: 15px;
+}
+
+.modal-feedback-person-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 40px;
+  box-sizing: border-box;
+}
+
+.email-text {
+  width: 460px;
 }
 /****************Конец стилизации модальных окон**********************/
