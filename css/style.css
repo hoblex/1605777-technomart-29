@@ -410,6 +410,7 @@ a {
 
 .search-in-site-input::-moz-placeholder {
   color: var(--basic-white);
+  opacity: 1;
 }
 
 .search-in-site-input::placeholder {
@@ -437,6 +438,7 @@ a {
 
 .search-in-site-input:focus::-moz-placeholder {
   color: var(--basic-black);
+  opacity: 1;
 }
 
 .search-in-site-input:focus::placeholder,
@@ -2287,6 +2289,7 @@ a {
 .person-email input::-moz-placeholder,
 .email-text textarea::-moz-placeholder {
   color: var(--old-price-color);
+  opacity: 1;
 }
 
 .person-name input {
