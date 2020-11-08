@@ -161,7 +161,8 @@ a {
   /*justify-content: space-between;*/
 }
 
-.main-header-logo {
+.main-header-logo,
+.catalog-header-logo {
   display: flex;
   background-color: var(--basic-red);
   border-bottom: 5px solid var(--logo-shadow-color);
@@ -171,7 +172,7 @@ a {
   margin-bottom: 5px;
 }
 
-.main-header-logo:active {
+.catalog-header-logo:active {
   background-color: var(--additional-red-active);
 }
 
@@ -377,11 +378,13 @@ a {
 
 .search-in-site-input {
   margin: 0;
+  padding-left: 3px;
   height: 42px;
   border: none;
   flex-grow: 1;
   outline: none;
   background-color: var(--top-bottom-color);
+  line-height: 42px;
   /*line-height: 1.15rem;*/
 }
 
@@ -405,9 +408,12 @@ a {
   opacity: 1;
 }
 
+.search-in-site-input::-moz-placeholder {
+  color: var(--basic-white);
+}
+
 .search-in-site-input::placeholder {
   color: var(--basic-white);
-  line-height: 115%;
 }
 
 .search-in-site-input:focus {
@@ -429,9 +435,15 @@ a {
   display: none;
 }
 
-.search-in-site-input:focus::placeholder{
+.search-in-site-input:focus::-moz-placeholder {
   color: var(--basic-black);
 }
+
+.search-in-site-input:focus::placeholder,
+.search-in-site-input:focus {
+  color: var(--basic-black);
+}
+
 
 .main-nav {
   background-color: var(--basic-gray);
@@ -1793,43 +1805,19 @@ a {
   height: 37px;
 }
 
+.catalog-container-pagination-item:last-child {
+  max-width: 135px;
+}
+
 .catalog-container-pagination-item a {
   display: inline-block;
   min-width: 37px;
-}
-
-.catalog-container-pagination-item:last-child {
-  margin-right: 0;
-  visibility: hidden;
-  position: relative;
 }
 
 .catalog-container-pagination-item:hover {
   outline: 1px solid var(--basic-graylight);
 }
 .catalog-container-pagination-item:active {
-  outline: 1px solid var(--basic-red);
-}
-
-.catalog-container-pagination-item:last-child a::after{
-  content: "Следующая";
-  display: flex;
-  visibility: visible;
-  position: absolute;
-  height: 100%;
-  bottom: 0;
-  width: 135px;
-  align-items: center;
-  justify-content: center;
-  left: 5px;
-  outline: 1px solid var(--catalog-pagination-border);
-}
-
-.catalog-container-pagination-item:last-child:hover a::after{
-  outline: 1px solid var(--basic-graylight);
-}
-
-.catalog-container-pagination-item:last-child:active a::after{
   outline: 1px solid var(--basic-red);
 }
 
@@ -1844,6 +1832,10 @@ a {
   outline: 1px solid var(--catalog-pagination-border);
   outline-offset: unset;
   text-transform: uppercase;
+}
+
+.catalog-container-pagination-item:last-child a{
+  width: 135px;
 }
 
 .catalog-container-pagination-item-current {
@@ -1924,7 +1916,6 @@ a {
   padding-right: 20px;
   padding-left: 20px;
   border-radius: 4px;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   background-color: var(--catalog-header-background);
 }
 
@@ -2147,14 +2138,17 @@ a {
   position: fixed;
   color: var(--basic-black);
   background-color: var(--basic-white);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
 }
 
 .modal-good-in-cart {
   display: none;
   margin: 0;
   padding: 0;
-  left: 38.5%;
-  top: 655px;
+  /*left: 38.5%;*/
+  /*top: 655px;*/
   width: 620px;
   height: 275px;
   border-top: 7px solid var(--basic-red);
@@ -2166,8 +2160,8 @@ a {
   display: none;
   margin: 0;
   padding: 0;
-  left: 37.4%;
-  bottom: 352px;
+  /*left: 37.4%;*/
+  /*bottom: 352px;*/
   width: 620px;
   height: 423px;
   border-top: 7px solid var(--basic-red);
@@ -2184,8 +2178,8 @@ a {
   display: none;
   margin: 0;
   padding: 0;
-  left: 31.5%;
-  top: 500px;
+  /*left: 31.5%;*/
+  /*top: 500px;*/
   width: 949px;
   height: 449px;
   border-top: 7px solid var(--basic-red);
@@ -2276,23 +2270,34 @@ a {
   font-size: 18px;
 }
 
+.person-name input,
+.person-email input,
+.email-text textarea {
+  font-family: "PT Sans", "Arial", sans-serif;
+  font-size: 13px;
+}
+
 .person-name input::placeholder,
 .person-email input::placeholder ,
 .email-text textarea::placeholder {
-  font-family: "PT Sans", "Arial", sans-serif;
-  font-size: 13px;
   color: var(--old-price-color);
 }
 
-.person-name input::placeholder {
+.person-name input::-moz-placeholder,
+.person-email input::-moz-placeholder,
+.email-text textarea::-moz-placeholder {
+  color: var(--old-price-color);
+}
+
+.person-name input {
   padding: 7px 8px 7px 12px;
 }
 
-.person-email input::placeholder {
+.person-email input {
   padding: 7px 10px 7px 12px;
 }
 
-.email-text textarea::placeholder {
+.email-text textarea {
   padding-top: 6px;
   padding-left: 12px;
 }
