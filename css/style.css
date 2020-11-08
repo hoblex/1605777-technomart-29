@@ -966,6 +966,7 @@ a {
   background-color: var(--basic-green);
   background-repeat: no-repeat;
   text-transform: uppercase;
+  cursor: pointer;
 }
 
 
@@ -1342,7 +1343,7 @@ a {
   background-color: var(--basic-gray);
 }
 
-.activated-current-sevices button:focus-within {
+.activated-current-service button:focus-within {
   border: none;
   outline: none;
   box-shadow: none;
@@ -1362,7 +1363,8 @@ a {
 }
 
 .common-information-map-pickup {
- margin-bottom: 19px;
+  margin-bottom: 19px;
+  cursor: pointer;
 }
 
 
@@ -1421,7 +1423,7 @@ a {
   margin-top: 25px;
 }
 
-.activated-current-sevices button{
+.activated-current-service button {
   background-color: var(--basic-white);
   color:  var(--basic-gray);
 }
@@ -1430,7 +1432,7 @@ a {
   margin-bottom: 9px;
 }
 
-.activated-current-sevices {
+.activated-current-service {
   display: block;
 }
 
@@ -2148,6 +2150,7 @@ a {
 }
 
 .modal-good-in-cart {
+  display: none;
   margin: 0;
   padding: 0;
   left: 38.5%;
@@ -2160,7 +2163,7 @@ a {
 }
 
 .modal-feedback {
-  /*display: none;*/
+  display: none;
   margin: 0;
   padding: 0;
   left: 37.4%;
@@ -2190,6 +2193,9 @@ a {
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
 }
 
+.modal-show {
+  display: block;
+}
 
 .modal-good-in-cart h2 {
   position: relative;
@@ -2212,7 +2218,8 @@ a {
 }
 
 .close-modal-good-in-cart,
-.close-modal-map {
+.close-modal-map,
+.close-modal-feedback {
   border: none;
   outline: none;
   background: none;
@@ -2221,6 +2228,7 @@ a {
 }
 
 .close-modal-good-in-cart::after,
+.close-modal-feedback::after,
 .close-modal-map::after {
   content: "";
   position: absolute;
@@ -2238,6 +2246,8 @@ a {
 
 .close-modal-good-in-cart:focus,
 .close-modal-good-in-cart:active,
+.close-modal-feedback:focus,
+.close-modal-feedback:active,
 .close-modal-map:focus,
 .close-modal-map:active {
   outline: none;
