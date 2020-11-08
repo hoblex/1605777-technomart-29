@@ -36,6 +36,7 @@
   --slider-bar-background-color: #00ca74;
   --slider-bar-center-color: #ABABAB;
   --slider-bar-shadow-color: #CFCFCF;
+  --good-in-cart-color: #F1F1F1;
 }
 
 /*Описание шрифтов*/
@@ -110,6 +111,7 @@ a {
   display: grid;
   grid-template-rows: min-content 1fr min-content;
   align-content: start;
+  position: relative;
 }
 
 .visually-hidden {
@@ -805,13 +807,6 @@ a {
   grid-area: 2 / 1 / -1 / 3;
 }
 
-.content-container-slider-item {
-  display: none;
-}
-
-.current-slide {
-  display: block;
-}
 
 .content-container-slider-item-wrap {
   position: relative;
@@ -848,39 +843,92 @@ a {
   font-size: 18px;
 }
 
-.change-slide {
-  display: flex;
-  margin: 0 0 39px 0;
-  justify-content: space-between;
-}
-
-/*.slide-catalog-radio-prev-wrap {*/
-/*  display: flex;*/
-/*  width: 301px;*/
-/*  margin-bottom: 27px;*/
-/*  justify-content: space-between;*/
-/*}*/
-
-.change-slide-prev {
+.change-slide-prev,
+.change-slide-next {
   border: 0;
   background: transparent url("../img/icon_left.svg") no-repeat;
   width: 22px;
   height: 44px;
+  cursor: pointer;
+}
+
+.change-slide-next {
+  background: transparent url("../img/icon_right.svg") no-repeat;
+}
+
+.change-slide-prev {
+  background: transparent url("../img/icon_left.svg") no-repeat;
+}
+
+.change-slide-radio-buttons {
+  margin: 0 auto;
+  display: block;
+  position: absolute;
+  left: 295px;
+  bottom: -10px;
+}
+
+.change-slide-radio-prev,
+.change-slide-radio-next {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border: none;
+  background-color: var(--basic-white);
+  border-radius: 50%;
+  position: absolute;
+  cursor: pointer;
+}
+
+.change-slide-radio-prev {
+  left: 20px;
+}
+
+.change-slide-radio-prev::after,
+.change-slide-radio-next::after {
+  display: none;
+  content: "";
+  width: 6px;
+  height: 6px;
+  padding: 0;
+  border-radius: 50%;
+  background-color: var(--basic-red);
+  position: absolute;
+  left: 2px;
+  top: 2px;
+}
+
+.current-slide::after{
+  display: block;
+}
+
+.content-container-slider-item {
+  display: none;
+}
+
+.current-slide {
+  display: block;
+}
+
+
+
+.change-slide-prev:focus,
+.change-slide-next:focus,
+.change-slide-radio-prev:focus,
+.change-slide-radio-next:focus {
+  outline: none;
+}
+
+.change-slide-radio-next {
+
 }
 
 .change-slide-buttons-wrap {
   position: absolute;
-  bottom: 0;
+  bottom: 60px;
   display: flex;
   flex-direction: column;
   width: 620px;
-}
-
-.change-slide-next {
-  border: 0;
-  background: transparent url("../img/icon_right.svg") no-repeat;
-  width: 22px;
-  height: 44px;
 }
 
 .change-slide-big-buttons {
@@ -889,12 +937,7 @@ a {
   margin-right: 20px;
   justify-content: space-between;
   margin-bottom: 40px;
-}
-
-
-.change-slide-radio-buttons {
-  margin: 0 auto;
-  display: flex;
+  position: relative;
 }
 
 .change-slide-radio-prev {
@@ -1037,8 +1080,7 @@ a {
 
 .popular-product-header,
 .popular-manufacturer-header,
-.delivery-description-header,
-.credit-description-header {
+.service-description-header {
   /*position: relative;*/
   color: var(--basic-gray);
 }
@@ -1095,6 +1137,10 @@ a {
 .catalog-container-field {
   max-width: 700px;
   /*margin-right: 20px;*/
+}
+
+.popular-product-container {
+  margin-bottom: 20px;
 }
 
 .product-item {
@@ -1292,8 +1338,15 @@ a {
   background-color: var(--basic-gray);
 }
 
+.activated-current-sevices button:focus-within {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
 .button-services-option:hover {
   background-color: var(--top-bottom-color);
+  color: var(--basic-white);
 }
 
 .common-information-pickup {
@@ -1309,31 +1362,72 @@ a {
 }
 
 
+.delivery-description-wrap {
+  padding: 0;
+  margin: 0;
+  width: 280px;
+}
+
+.guarantee-description-wrap {
+  margin: 0;
+  padding: 0;
+  width: 320px;
+}
+
 .delivery-description {
+  display: none;
   flex-grow: 1;
   margin-left: 80px;
   background-image: url("../img/delivery_truck.png");
-  /*background-color: var(--basic-graylight-30);*/
   background-repeat: no-repeat;
   background-position: top 21px right ;
 }
 
-.delivery-description-header {
+.service-description-header {
   margin-bottom: 30px ;
 }
 
+.guarantee-description-wrap .service-description-header {
+  margin-bottom: 25px;
+}
+
 .guarantee-description {
+  display: none;
+  flex-grow: 1;
+  margin-left: 80px;
   background-image: url("../img/guarantee.png");
   background-repeat: no-repeat;
+  background-position: top right;
 }
 
 .credit-description {
+  display: none;
+  flex-grow: 1;
+  margin-left: 80px;
   background-image: url("../img/credit.png");
   background-repeat: no-repeat;
+  background-position: top right;
+}
+
+.button-send-a-request {
+  display: block;
+  width: 195px;
+  height: 38px;
+  border-radius: 4px;
+  margin-top: 25px;
+}
+
+.activated-current-sevices button{
+  background-color: var(--basic-white);
+  color:  var(--basic-gray);
 }
 
 .common-information-delivery {
   margin-bottom: 9px;
+}
+
+.activated-current-sevices {
+  display: block;
 }
 
 .delivery-list {
@@ -1365,7 +1459,6 @@ a {
 }
 
 .button-company-information {
-
   width: 220px;
 }
 
@@ -1902,27 +1995,6 @@ a {
   display: none;
 }
 
-/*.check-box {*/
-/*  position: absolute;*/
-/*  width: 27px;*/
-/*  height: 27px;*/
-/*  margin-left: -35px;*/
-/*  background-image: url("../img/icon_checkbox_off.svg");*/
-/*  background-repeat: no-repeat;*/
-/*}*/
-
-/*.manufacturer-checkbox-input:checked + .check-box {*/
-/*  background-image: url("../img/icon_checkbox_on.svg");*/
-/*}*/
-
-/*.manufacturer-checkbox-input:disabled + .check-box {*/
-/*  opacity: 0.3;*/
-/*}*/
-
-/*.manufacturer-checkbox-input:disabled ~ .check-box-name{*/
-/*  opacity: 0.6;*/
-/*}*/
-
 .check-box {
   position: relative;
 }
@@ -2062,3 +2134,101 @@ a {
 
 /****************Конец стилизаций страницы каталога*************/
 
+/****************Стилизация модальных окон**********************/
+
+.modal {
+  /*display: none;*/
+  position: fixed;
+  color: var(--basic-black);
+  background-color: var(--basic-white);
+}
+
+.modal-good-in-cart {
+  margin: 0;
+  padding: 0;
+  left: 38.5%;
+  top: 655px;
+  width: 620px;
+  height: 275px;
+  border-top: 7px solid var(--basic-red);
+  z-index: 1001;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+.modal-feedback {
+  margin: 0;
+  padding: 0;
+  left: 38.5%;
+  top: 655px;
+  width: 620px;
+  height: 430px;
+  border-top: 7px solid var(--basic-red);
+  z-index: 1001;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+
+.modal-good-in-cart h2 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  height: 163px;
+  margin: 0;
+}
+
+.modal-good-in-cart h2::before {
+  content: "";
+  width: 66px;
+  height: 66px;
+  position: absolute;
+  background-image: url("../img/icon_mark.svg");
+  background-repeat: no-repeat;
+  left: 82px;
+}
+
+.close-modal-good-in-cart {
+  /*display: none;*/
+  border: none;
+  outline: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+}
+
+.close-modal-good-in-cart::after {
+  content: "";
+  position: absolute;
+  left: 95%;
+  top: 10px;
+  width: 21px;
+  height: 21px;
+  background-image: url("../img/icon_close.svg");
+  cursor: pointer;
+}
+
+.close-modal-good-in-cart:focus,
+.close-modal-good-in-cart:active {
+  outline: none;
+}
+
+.modal-good-in-cart-buttons-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 112px;
+  background-color: var(--good-in-cart-color);
+  margin: 0;
+  padding: 0;
+}
+
+.button-make-order {
+  margin-right: 10px;
+}
+
+.button-continue-shopping {
+  background-color: var(--basic-white);
+  color: var(--basic-black);
+}
+/****************Конец стилизации модальных окон**********************/
