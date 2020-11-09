@@ -1335,7 +1335,7 @@ a {
   height: 279px;
   width: 10px;
   background-size: auto;
-  background-image: url(../img/service-shadow.png);
+  background-image: url(../img/service_shadow.png);
   background-repeat: no-repeat;
 }
 
@@ -1669,7 +1669,7 @@ a {
   justify-content: flex-start;
   text-transform: uppercase;
   margin-bottom: 20px;
-  font: 13px normal normal, "PT Sans", "Arial", sans-serif;
+  font: normal normal 13px "PT Sans", "Arial", sans-serif;
   margin-top: -38px;
   padding-left: 20px;
 
