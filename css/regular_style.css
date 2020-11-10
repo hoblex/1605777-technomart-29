@@ -266,6 +266,7 @@ a {
   align-items: center;
   align-self: flex-start;
   justify-content: center;
+  overflow: hidden;
 }
 
 .bookmarks-link {
@@ -469,6 +470,7 @@ a {
   font-size: 21px;
   line-height: 21px;
   color: var(--basic-black);
+  overflow: hidden;
 }
 
 .login-link {
@@ -640,6 +642,7 @@ a {
   margin: 0 20px;
   padding: 0;
   align-items: center;
+  overflow: hidden;
 }
 
 .site-navigation-item {
@@ -712,8 +715,10 @@ a {
   gap: 20px;
   padding: 0;
   margin: 0;
+  height: 409px;
   grid-template-columns: repeat(3, 300px);
   grid-template-rows: repeat(3, 123px);
+  overflow: hidden;
 }
 
 .content-container-item-name {
@@ -765,6 +770,7 @@ a {
   margin-left: 23px;
   margin-bottom: 0;
   margin-top: 17px;
+  overflow: hidden;
   /*margin: 0 0 21px 22px;*/
 }
 
@@ -1086,6 +1092,7 @@ a {
   margin-bottom: 20px;
   padding: 0;
   background-color: var(--common-header-background);
+  overflow: hidden;
 }
 
 .common-header-wrap  h2 {
@@ -1392,6 +1399,8 @@ a {
   padding: 0;
   margin: 0;
   width: 280px;
+  height: 159px;
+  overflow: hidden;
 }
 
 .guarantee-description-wrap {
@@ -1549,6 +1558,7 @@ a {
   padding: 0;
   list-style: none;
   height: 48px;
+  overflow: hidden;
 }
 
 .footer-nav-line1 {
@@ -1633,6 +1643,7 @@ a {
   justify-content: space-between;
   margin-left: 38px;
   margin-top: 5px;
+  overflow: hidden;
 }
 
 .social-link-container {
@@ -1869,6 +1880,8 @@ a {
 .catalog-article-container-header {
   max-height: 261px;
   margin-top: 0;
+  height: 129px;
+  overflow: hidden;
 }
 
 .catalog-filter-form {
