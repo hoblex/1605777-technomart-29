@@ -4,14 +4,17 @@
   --basic-green: #63A63E;
   --transparent-white-50: rgba(255, 255, 255, 0.5);
   --transparent-white-30: rgba(255, 255, 255, 0.3);
+  --transparent-black-shadow-15: rgba(0, 0, 0, 0.15);
+  --transparent-black-shadow-25: rgba(0, 0, 0, 0.25);
   --basic-red: #EE3643;
   --additional-red-hover: #CA2C37;
   --additional-red-active: #BA2732;
-  --basic-gray: #32425C;
+  --basic-gray: #32425c;
   --basic-graylight: #C5C5C5;
   --basic-graylight-30: rgba(197,197,197,0.3);
   --additional-graylight-30: rgba(169,169,169,0.3);
   --additional-graylight:#F2F6F8;
+  --radiobutton-hover-color: #B5B5B5;
   --top-bottom-color: #293449;
   --material-background-color: #FFBF47;
   --tools-background-color: #3BBCE3;
@@ -32,7 +35,7 @@
   --logo-shadow-color: #8D1E26;
   --catalog-header-background: #F7F3EC;
   --catalog-pagination-border: #E5E5E5;
-  --slider-background-color: #d7dcde;
+  --slider-background-color: #D7DCDE;
   --slider-bar-background-color: #00ca74;
   --slider-bar-center-color: #ABABAB;
   --slider-bar-shadow-color: #CFCFCF;
@@ -46,7 +49,7 @@
   font-style: normal;
   font-weight: normal;
   src: url("../fonts/cuprum.woff2") format("woff2"),
-      url("../fonts/cuprum.woff") format("woff");
+  url("../fonts/cuprum.woff") format("woff");
 }
 
 @font-face {
@@ -94,6 +97,7 @@ body {
   font: normal normal 14px "Cuprum", "Arial", sans-serif;
   line-height: 24px;
 }
+
 img {
   max-width: 100%;
   height: auto;
@@ -831,6 +835,7 @@ a {
   height: 266px;
   flex-direction: column;
   margin-bottom: 59px;
+  background-color: var(--slider-background-color);
 }
 
 .catalog-slide-image {
@@ -1066,7 +1071,7 @@ a {
 }
 
 .manufacturer-item:hover {
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 20px var(--transparent-black-shadow-15);
 }
 
 .manufacturer-item:active {
@@ -1181,7 +1186,7 @@ a {
 }
 
 .product-item:hover {
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 20px var(--transparent-black-shadow-15);
 }
 
 .product-card-image {
@@ -1353,8 +1358,8 @@ a {
   color: var(--basic-white);
   border: none;
   box-shadow:
-            inset 0 -1px 0 0 var(--top-bottom-color),
-            inset 0 1px 0 0 var(--button-inner-shadow);
+  inset 0 -1px 0 0 var(--top-bottom-color),
+  inset 0 1px 0 0 var(--button-inner-shadow);
   background-color: var(--basic-gray);
 }
 
@@ -1985,6 +1990,7 @@ a {
 
 .manufacturer-checkbox,
 .electricity-supply {
+  position: relative;
   font-size: 15px;
   line-height: 19px;
   margin-bottom: 20px;
@@ -1995,7 +2001,9 @@ a {
 
 .manufacturer-checkbox-input,
 .electricity-supply-input {
-  display: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 .check-box {
@@ -2005,11 +2013,23 @@ a {
 .check-box::before {
   content: "";
   position: absolute;
-    width: 27px;
-    height: 27px;
-    left: -35px;
-    background-image: url("../img/icon_checkbox_off.svg");
-    background-repeat: no-repeat;
+  width: 27px;
+  height: 27px;
+  left: -35px;
+  background-image: url("../img/icon_checkbox_off.svg");
+  background-repeat: no-repeat;
+}
+
+.manufacturer-checkbox-input:focus  + .check-box::before {
+  background-image: url("../img/icon_checkbox_off_hover.svg");
+}
+
+.manufacturer-checkbox-input:checked:focus  + .check-box::before {
+  background-image: url("../img/icon_checkbox_on_hover.svg");
+}
+
+.check-box:hover::before {
+  background-image: url("../img/icon_checkbox_off_hover.svg");
 }
 
 .manufacturer-checkbox-input:disabled + .check-box::before {
@@ -2020,25 +2040,53 @@ a {
   opacity: 0.6;
 }
 
-
-
 .manufacturer-checkbox-input:checked + .check-box::before {
   background-image: url("../img/icon_checkbox_on.svg");
 }
 
+.manufacturer-checkbox-input:checked + .check-box:hover::before {
+  background-image: url("../img/icon_checkbox_on_hover.svg");
+}
 
 .radio-element {
+  position: relative;
+}
+
+.radio-element::before {
+  content: "";
   position: absolute;
-  width: 25px;
+  width: 27px;
   height: 27px;
-  margin-left: -35px;
+  left: -35px;
   background-image: url("../img/icon_radio_off.svg");
   background-repeat: no-repeat;
 }
 
-.electricity-supply-input:checked + .radio-element {
-  background-image: url("../img/icon_radio_on.svg");
+.radio-element:hover::before {
+  background-image: url("../img/icon_radio_off_hover.svg");
 }
+
+.electricity-supply-input:checked + .radio-element::before {
+  content: "";
+  width: 27px;
+  height: 27px;
+  left: -35px;
+  background-image: url("../img/icon_radio_on.svg");
+  background-repeat: no-repeat;
+}
+
+.electricity-supply-input:checked + .radio-element:hover::before {
+  background-image: url("../img/icon_radio_on_hover.svg");
+}
+
+.electricity-supply-input:checked:focus + .radio-element::before {
+  background-image: url("../img/icon_radio_on_hover.svg");
+}
+
+.electricity-supply-input:focus + .radio-element::before {
+  background-image: url("../img/icon_radio_off_hover.svg");
+}
+
 
 .catalog-filter-show-results {
   display: block;
@@ -2159,7 +2207,7 @@ a {
   height: 275px;
   border-top: 7px solid var(--basic-red);
   z-index: 1001;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 20px var(--transparent-black-shadow-15);
 }
 
 .modal-feedback {
@@ -2172,7 +2220,8 @@ a {
   height: 423px;
   border-top: 7px solid var(--basic-red);
   z-index: 1001;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 20px var(--transparent-black-shadow-15);
+  animation: bounce 0.6s;
 }
 
 .form-send-mail {
@@ -2184,13 +2233,11 @@ a {
   display: none;
   margin: 0;
   padding: 0;
-  /*left: 31.5%;*/
-  /*top: 500px;*/
   width: 949px;
   height: 449px;
   border-top: 7px solid var(--basic-red);
   z-index: 1001;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 20px var(--transparent-black-shadow-15);
 }
 
 .modal-show {
@@ -2215,6 +2262,10 @@ a {
   background-image: url("../img/icon_mark.svg");
   background-repeat: no-repeat;
   left: 82px;
+}
+
+.modal-feedback-error {
+  animation: shake 0.6s;
 }
 
 .close-modal-good-in-cart,
@@ -2347,7 +2398,7 @@ a {
   background-color: var(--modal-feedback-background-color);
 }
 
-.button-send-main {
+.button-send-mail {
   width: 460px;
   border: none;
   outline: none;
@@ -2374,3 +2425,45 @@ a {
   width: 460px;
 }
 /****************Конец стилизации модальных окон**********************/
+
+
+/*Анимация*/
+@keyframes bounce {
+  0% {
+    transform: translateX(-50%) translateY(-1000%);
+  }
+
+  70% {
+    transform: translateX(-50%) translateY(-30%);
+  }
+
+  90% {
+    transform: translateX(-50%) translateY(-47%);
+  }
+
+  100% {
+    transform: translateX(-50%) translateY(-50%);
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateY(-5px);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateY(5px);
+  }
+}

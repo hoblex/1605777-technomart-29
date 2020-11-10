@@ -101,19 +101,27 @@ buttonCloseMap.addEventListener("click", function (evt) {
 const buttonContactUs = document.querySelector('.button-contact-us');
 const displayModalFeedback = document.querySelector('.modal-feedback');
 const buttonCloseFeedback = document.querySelector('.close-modal-feedback');
+const feedbackPopup = document.querySelector(".modal-feedback");
+const personName = feedbackPopup.querySelector(".person-name-placeholder");
+const personEmail = feedbackPopup.querySelector(".person-email-placeholder");
+const emailText = feedbackPopup.querySelector(".email-text-placeholder");
+
+const formSendMail = feedbackPopup.querySelector(".form-send-mail");
 
 
 buttonContactUs.addEventListener("click", function (evt) {
   evt.preventDefault();
   displayModalFeedback.classList.add("modal-show");
+  personName.focus();
 });
-
 
 window.addEventListener("keydown", function (evt) {
   if (evt.keyCode === 27) {
     if (displayModalFeedback.classList.contains("modal-show")) {
       evt.preventDefault();
       displayModalFeedback.classList.remove("modal-show");
+      formSendMail.classList.remove("modal-feedback-error");
+
     }
   }
 });
@@ -122,6 +130,16 @@ buttonCloseFeedback.addEventListener("click", function (evt) {
   if (displayModalFeedback.classList.contains("modal-show")) {
     evt.preventDefault();
     displayModalFeedback.classList.remove("modal-show");
+    formSendMail.classList.remove("modal-feedback-error");
+  }
+});
+
+formSendMail.addEventListener("submit", function (evt) {
+  if (!personName.value || !personEmail.value || !emailText.value) {
+    formSendMail.classList.remove("modal-feedback-error");
+    formSendMail.offsetWidth = formSendMail.offsetWidth;
+    formSendMail.classList.add("modal-feedback-error");
+    evt.preventDefault();
   }
 });
 
@@ -155,3 +173,4 @@ buttonCloseModalGoodInCart.addEventListener("click", function (evt) {
     displayModalGoodInCart.classList.remove("modal-show");
   }
 });
+

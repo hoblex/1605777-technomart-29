@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <title>HTML Academy: Техномарт</title>
   <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/regular_style.css">
 </head>
 <body class="page-body">
 <header class="main-header">
@@ -357,19 +357,19 @@
       <div class="modal-feedback-person-wrap">
         <label  class="person-name">
           Ваше имя:
-          <input type="text"  placeholder="Имя Фамилия">
+          <input type="text"  placeholder="Имя Фамилия" class="person-name-placeholder">
         </label>
         <label  class="person-email">
           Ваш e-mail:
-          <input type="email"  placeholder="email@example.com">
+          <input type="email"  placeholder="email@example.com"   class="person-email-placeholder">
         </label>
       </div>
       <label  class="email-text">Текст письма:
-        <textarea name="comment" rows="8" placeholder="В свободной форме"></textarea>
+        <textarea name="comment" rows="8" placeholder="В свободной форме"  class="email-text-placeholder"></textarea>
       </label>
     </div>
     <div class="button-send-mail-wrap">
-      <button type="button" class="regular-button button-send-main">Отправить</button>
+      <button type="submit" class="regular-button button-send-mail">Отправить</button>
     </div>
   </form>
   <button type="button" aria-label="Закрыть" class="close-modal-feedback"></button>
@@ -387,6 +387,6 @@
   </div>
   <button type="button" aria-label="Закрыть" class="close-modal-good-in-cart"></button>
 </section>
-<script src="js/script.js"></script>
+<script src="js/regular_script.js"></script>
 </body>
 </html>
